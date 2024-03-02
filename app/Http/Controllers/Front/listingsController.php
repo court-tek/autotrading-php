@@ -13,7 +13,11 @@ class listingsController extends Controller
     public function index()
     {
         $cars = [
-            "subaru" => "wrx",
+            "wrx" => "subaru",
+            "wrx sti" => "subaru",
+            "chaser" => "toyota",
+            "silvia" => "nissan",
+            "rx7" => "silvia"
         ];
 
         return view("front/index", ["cars" => $cars]);

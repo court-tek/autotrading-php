@@ -4,15 +4,15 @@
 @section('title', 'Realestate App')
  
 @section('content')
-    <!-- ============================================================== -->
-    <!-- pageheader  -->
-    <!-- ============================================================== -->
     <?php 
         $location = basename($_SERVER["REQUEST_URI"]); 
         $result = str_ireplace("%20"," ", $location);
         
-        // die(var_dump($result));
+        // die(var_dump($cars));
     ?>
+    <!-- ============================================================== -->
+    <!-- pageheader  -->
+    <!-- ============================================================== -->
     <nav aria-label="breadcrumb">
         <div class="container">
             <ol class="breadcrumb__grid">
@@ -89,28 +89,33 @@
                 </div>
             </section>
             <section class="listings__sort-view">
-                <div class="listings__count">18 matches</div>
-                <div class="form-group listings__price">
-                    <label for="">Sort By</label>
-                    <select name="min-price" class="listings__min-price">
-                        <option value="new_used">Best Match</option>
-                        <option value="new_used">Lowest Price</option>
-                        <option value="used">Lowest Mileage</option>
-                        <option value="certified">Hiest Mileage</option>
-                        <option value="certified">Nearest Location</option>
-                    </select>
+                <div class="listings__grid">
+                    <div class="listings__count">18 matches</div>
+                    <div class="form-group listings__price">
+                        <label for="">Sort By</label>
+                        <select name="min-price" class="listings__min-price">
+                            <option value="new_used">Best Match</option>
+                            <option value="new_used">Lowest Price</option>
+                            <option value="used">Lowest Mileage</option>
+                            <option value="certified">Hiest Mileage</option>
+                            <option value="certified">Nearest Location</option>
+                        </select>
+                    </div>
                 </div>
             </section>
             <section class="listings__grid">
-                <div class="listings__item">
-                    <div class="listings__image">
-                        <div class="listings__price">$21000</div>
+                @foreach ($cars as $car)
+                    <div class="listings__item">
+                        <div class="listings__image">
+                            <div class="listings__price">$21000</div>
+                            <div class="listings__save"><i class="far fa-heart"></i></div>
+                        </div>
+                        <div class="listings__details">
+                            <h5>{{ $car }}</h5>
+                            <h6>Jacksonville</h6>
+                        </div>
                     </div>
-                    <div class="listings__details">
-                        <h5>Subaru WRX Limited</h5>
-                        <h6>Jacksonville</h6>
-                    </div>
-                </div>
+                @endforeach
             </section>
         </div>
     </div>

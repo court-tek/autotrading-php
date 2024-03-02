@@ -12,7 +12,7 @@ class welcomeController extends Controller
      */
     public function index()
     {
-        $models = ['Nissan Silvia', 'Skyline R34', 'Mazda 3', 'Mazda RX7', 'Subaru', 'Subaru WRX', 'Subaru WRX STI', 'Ford Mustang', 'Ford Bronco'];
+        $models = ['Nissan Silvia', 'Skyline R34', 'Mazda 3', 'Mazda RX7', 'Toyota Chaser', 'Subaru WRX', 'Subaru WRX STI', 'Ford Mustang', 'Ford Bronco'];
 
         return view("welcome", ["models" => $models]);
     }

@@ -3,6 +3,74 @@
 /* This applies from 768px onwards */
 @media (min-width: 768px) {}
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .listings__filter {
+        --column-count: 8;
+        display: grid;
+        width: 700px;
+        gap: 0.5rem;
+        grid-template-columns: repeat(var(--column-count), 1fr);
+        padding: 50px 0;
+    }
+
+    .listings__filter .form-group {
+        display: grid;
+        gap: 0.5rem;
+    }
+
+    .form-group label {
+        font-weight: 500;
+        font-size: var(--font-size-300);
+    }
+
+    .form-group select {
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+
+    button {
+        border: none;
+        color: var(--themecolor1);
+        font-weight: 600;
+        padding: 10px 20px;
+        background-color: var(--blanco);
+        border: 1px solid var(--themecolor1);
+        border-radius: 5px;
+        text-transform: capitalize;
+        transition: all .3s ease-in-out;
+        /* height: 60px; */
+    }
+    
+    button:hover {
+        background-color: var(--themecolor1);
+        color: var(--blanco);
+    }
+
+    /* sort view */
+    .listings__sort-view {
+        --column-count: 2;
+        background-color: var(--themecolor6);
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+    }
+    
+    .listings__sort-view .listings__grid {
+        display: grid;
+        grid-template-columns: repeat(var(--column-count), 1fr);
+        width: 300px;
+    }
+
+    .listings__grid .listings__count {
+        display: flex;
+        align-items: center;
+    }
+
+    .listings__grid .form-group {
+        display: grid;
+        gap: 0.5rem;
+    }
+}
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}

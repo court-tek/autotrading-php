@@ -1,6 +1,7 @@
 @import url('reset.css');
 @import url('welcome-header.css');
 @import url('breadcrumb.css');
+@import url('listings-filter.css');
 @import url('listings.css');
 @import url('welcome.css');
 
@@ -10,6 +11,7 @@
     --themecolor3: hsl(211, 100%, 50%);
     --themecolor4: hsl(210, 7%, 46%);
     --themecolor5: hsl(0, 88%, 67%);
+    --themecolor6: hsl(0, 0%, 95%);
     --rojo: hsl(0, 100%, 50%);
     --naranja: hsl(39, 100%, 50%);
     --amarillo: hsl(60, 100%, 50%);

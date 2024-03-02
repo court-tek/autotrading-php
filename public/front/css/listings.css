@@ -4,47 +4,17 @@
 @media (min-width: 768px) {}
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    .listings__filter {
-        --column-count: 8;
+    .listings__grid {
         display: grid;
-        width: 700px;
-        gap: 0.5rem;
-        grid-template-columns: repeat(var(--column-count), 1fr);
-        padding: 50px 0;
+        gap: 2rem;
+        width: 100%;
+        grid-template-columns: repeat(var(--column-count-three), 1fr);
     }
 
-    .listings__filter .form-group {
-        display: grid;
-        gap: 0.5rem;
-    }
-
-    .form-group label {
-        font-weight: 500;
-        font-size: var(--font-size-300);
-    }
-
-    .form-group select {
-        padding: 10px 15px;
+    .listings__grid .listings__item {
+        border: 1px solid var(--negro);
         border-radius: 5px;
-    }
-
-
-    button {
-        border: none;
-        color: var(--themecolor1);
-        font-weight: 600;
-        padding: 10px 20px;
-        background-color: var(--blanco);
-        border: 1px solid var(--themecolor1);
-        border-radius: 5px;
-        text-transform: capitalize;
-        transition: all .3s ease-in-out;
-        /* height: 60px; */
-    }
-    
-    button:hover {
-        background-color: var(--themecolor1);
-        color: var(--blanco);
+        overflow: hidden;
     }
 }
 /* Extra large devices (large desktops, 1200px and up) */
