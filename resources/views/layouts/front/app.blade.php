@@ -20,11 +20,11 @@
     </head>
     <body class="antialiased">
 
-        @include('front.header')
+        @include('layouts.front.header')
 
         @yield('content')
 
-        @include('front.footer')
+        @include('layouts.front.footer')
 
         <script src="{{url("front/js/main.js")}}"></script>
     </body>

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class listingsController extends Controller
@@ -11,7 +12,11 @@ class listingsController extends Controller
      */
     public function index()
     {
-        //
+        $cars = [
+            "subaru" => "wrx",
+        ];
+
+        return view("front/index", ["cars" => $cars]);
     }
 
     /**

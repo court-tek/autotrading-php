@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::prefix('/2024')->namespace('App\Http\Controllers\Front')->group(function() {
     // Main Blog Routes
-    Route::get('/listings', 'ListingController@index');
-    Route::get('/listings/saved', 'ListingController@savedListings');
-    Route::get('/listings/{id}', 'ListingController@create');
+    Route::get('/listings', 'listingsController@index');
+    Route::get('/listings/saved', 'listingsController@savedListings');
+    Route::get('/listings/{id}', 'listingsController@create');
 });
