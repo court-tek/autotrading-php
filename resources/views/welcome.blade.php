@@ -22,8 +22,23 @@
         <div class="container">
             <header class="navigation">
             
+                {{-- logo area --}}
+                <div class="navigation__logo">
+                    <a href="" class="navigation__header-link">
+                        Auto Exchange
+                    </a>
+                </div>
+
                 {{-- left nav --}}
                 <div class="navigation__left-menu">
+                    {{-- logo area --}}
+                    <div class="navigation__left-menu-logo">
+                        <a href="" class="navigation__header-link">
+                            Auto Exchange
+                        </a>
+                    </div>
+
+                    {{-- navi links --}}
                     <div class="navigation__links">
                         <a href="#" class="navigation__link">Cars for Sale</a>
                         <a href="#" class="navigation__link">New Cars</a>
@@ -31,13 +46,6 @@
                         <a href="#" class="navigation__link">Financing</a>
                         <a href="#" class="navigation__link">News</a>
                     </div>
-                </div>
-    
-                {{-- logo area --}}
-                <div class="navigation__logo">
-                    <a href="" class="navigation__header-link">
-                        Auto Exchange
-                    </a>
                 </div>
     
                 {{-- mobile open btn --}}
@@ -59,7 +67,6 @@
                         my account
                         <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="navigation__post-btn">Sell Your Car</div>
                 </div>
             </header>
         </div>
@@ -171,14 +178,14 @@
 
         <div class="welcome">
             <div class="container">
-                <h1>Helping You <br> Find Your Next Car</h1>
+                <h1 class="welcome__heading">Helping You <br> Find Your Next Car</h1>
 
                 <section class="welcome__trending">
                     <input type="text" name="search" class="welcome__search">
                     <div class="welcome__title">
                         <i class="far fa-clock"></i> Trending Now
                     </div>
-                    <div class="welcome__trending-tags">
+                    <div class="welcome__tags">
                         @foreach ($looptags as $tag)
                             <div class="welcome__tag">
                                 <i class="fas fa-search"></i>

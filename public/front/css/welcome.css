@@ -20,14 +20,25 @@
     margin: 20px 0;
 }
 
+.welcome__tags .welcome__tag {
+
+}
 
 /* This applies from 768px onwards */
 @media (min-width: 768px) {
-    
+
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    .welcome .welcome__heading {
+        color: var(--blanco);
+        text-align: center;
+        text-transform: capitalize;
+        font-size: var(--font-size-900);
+        font-weight: 700;
+
+    }
     .welcome__trending .welcome__search {
         width: 100%;
         font-size: 2rem;
@@ -36,7 +47,37 @@
     }
 
     .welcome .welcome__trending {
-        max-width: 700px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .welcome__trending .welcome__title {
+        font-size: var(--font-size-600);
+        color: var(--blanco);
+        text-align: center;
+        padding: 20px;
+        text-transform: uppercase;
+    }
+
+    .welcome__tags {
+        text-align: center;
+    }
+
+    .welcome__tags .welcome__tag {
+        padding: 10px 20px;
+        border-radius: 45px;
+        color: var(--blanco);
+        border: 1px solid var(--blanco);
+        display: inline-block;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        transition: all .3s ease-in-out;
+    }
+
+    .welcome__tags .welcome__tag:hover {
+        background-color: var(--blanco);
+        color: var(--themecolor1);
+        font-weight: 600;
     }
 }
 
