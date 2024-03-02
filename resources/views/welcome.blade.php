@@ -1,6 +1,3 @@
-<?php 
-    $looptags = ['Nissan Silvia', 'Skyline R34', 'Mazda 3', 'Mazda RX7', 'Subaru', 'Subaru WRX', 'Subaru WRX STI', 'Ford Mustang', 'Ford Bronco'];
-?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -186,11 +183,11 @@
                         <i class="far fa-clock"></i> Trending Now
                     </div>
                     <div class="welcome__tags">
-                        @foreach ($looptags as $tag)
-                            <div class="welcome__tag">
+                        @foreach ($models as $tag)
+                            <a href="{{ url("listings/{$tag}") }}" class="welcome__tag">
                                 <i class="fas fa-search"></i>
                                 {{ $tag }}
-                            </div>
+                            </a>
                         @endforeach
                     </div>
                 </section> 

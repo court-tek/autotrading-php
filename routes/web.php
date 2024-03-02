@@ -13,13 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::prefix('/2024')->namespace('App\Http\Controllers\Front')->group(function() {
+Route::namespace('App\Http\Controllers\Front')->group(function() {
+    // welcome page
+    Route::get('/', 'welcomeController@index');
+
     // Main Blog Routes
-    Route::get('/listings', 'listingsController@index');
+    Route::get('/listings/{model}', 'listingsController@index');
     Route::get('/listings/saved', 'listingsController@savedListings');
     Route::get('/listings/{id}', 'listingsController@create');
 });
