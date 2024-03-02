@@ -9,11 +9,12 @@
     <!-- ============================================================== -->
     <nav aria-label="breadcrumb">
         <div class="container">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">listings</li>
+            <ol class="breadcrumb__grid">
+                <li class="breadcrumb__item"><a href="/">Home</a></li>
+                <span class="breadcrumb__divider" style="">/</span>
+                <li class="breadcrumb__item breadcrumb--active" aria-current="page">Listings</li>
             </ol>
-            <h2 class="breadcrumb__page-title">listings</h2>
+            <h2 class="breadcrumb__page-title">Listings</h2>
         </div>
     </nav>
     <!-- ============================================================== -->
@@ -71,6 +72,7 @@
                 </div>
             </section>
             <section class="listings__sort-view">
+                <div class="listings__count">18 matches</div>
                 <div class="form-group listings__price">
                     <label for="">Sort By</label>
                     <select name="min-price" class="listings__min-price">
@@ -83,7 +85,15 @@
                 </div>
             </section>
             <section class="listings__grid">
-
+                <div class="listings__item">
+                    <div class="listings__image">
+                        <div class="listings__price">$21000</div>
+                    </div>
+                    <div class="listings__details">
+                        <h5>Subaru WRX Limited</h5>
+                        <h6>Jacksonville</h6>
+                    </div>
+                </div>
             </section>
         </div>
     </div>

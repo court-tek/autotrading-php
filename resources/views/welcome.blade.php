@@ -171,8 +171,8 @@
                 <div class="mobile-menu__item">Help</div>
             </div>
         </section>
-        {{-- mobile menu ends --}}
 
+        {{-- content --}}
         <div class="welcome">
             <div class="container">
                 <h1 class="welcome__heading">Helping You <br> Find Your Next Car</h1>

@@ -1,0 +1,35 @@
+/* This applies from 0px to 768 */
+
+/* This applies from 768px onwards */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .breadcrumb__grid {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .breadcrumb__item a {
+        color: var(--themecolor3);
+        text-decoration: none;
+    }
+
+    .breadcrumb--active {
+        color: var(--themecolor4);
+    }
+
+    .breadcrumb__divider {
+        margin: 0 8px;
+        color: var(--themecolor4);
+    }
+
+    .breadcrumb__page-title {
+        font-size: var(--font-size-900);
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

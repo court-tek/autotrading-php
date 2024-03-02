@@ -42,6 +42,11 @@
     height: 38px;
 }
 
+.navigation__right-menu-pages .navigation__user-img {
+    padding: 20px;
+    height: 38px;
+}
+
 .navigation__right-menu .navigation__user-dropdown {
     display: none;
     /* padding: 20px ; */
@@ -213,14 +218,32 @@
         margin-right: 20px;
     }
 
+    .navigation__links .navigation__link-pages {
+        font-size: var(--font-size-400);
+        color: var(--negro);
+        text-decoration: none;
+        margin-right: 20px;
+    }
+
     .navigation__right-menu {
         display: flex;
         color: var(--blanco);
     }
+    
+    .navigation__right-menu-pages {
+        display: flex;
+        color: var(--negro);
+        /* background-color: var(--themecolor1); */
+    }
 
     .navigation__right-menu .navigation__user-dropdown {
         display: flex;
-        padding: 20px ;
+        padding: 20px;
+    }
+
+    .navigation__right-menu-pages .navigation__user-dropdown {
+        display: flex;
+        padding: 20px;
     }
 
    .navigation__burger-menu {
