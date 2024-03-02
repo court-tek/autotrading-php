@@ -108,11 +108,18 @@
                     <div class="listings__item">
                         <div class="listings__image">
                             <div class="listings__price">$21000</div>
-                            <div class="listings__save"><i class="far fa-heart"></i></div>
+                            <div class="listings__save"><i class="fas fa-heart"></i></div>
                         </div>
                         <div class="listings__details">
-                            <h5>{{ $car }}</h5>
-                            <h6>Jacksonville</h6>
+                            <h5 class="listings__condition">Used</h5>
+                            <h5 class="listings__title">
+                                <a href="/">2018 {{ $car }}</a>
+                            </h5>
+                            <h5 class="listings__mileage">23,000 mi</h5>
+                            <h5 class="listings__payments">Est. $513/mo</h5>
+                            <h5 class="listings__carfax">Get the CarFax Report <i class="ti-arrow-top-right"></i></h5>
+                            <h5 class="listings__seller">Hanania of Orange Park</h5>
+                            <h6 class="listings__city"><i class="fas fa-map-marker-alt"></i> Jacksonville, FL</h6>
                         </div>
                     </div>
                 @endforeach

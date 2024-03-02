@@ -12,10 +12,103 @@
     }
 
     .listings__grid .listings__item {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         border: 1px solid var(--negro);
         border-radius: 5px;
         overflow: hidden;
     }
+
+    .listings__item .listings__image {
+        background: url("../../images/pexels-wavyvisuals-18818905.jpg");
+        height: 250px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding: 10px;
+        position: relative;
+    }
+
+    .listings__image .listings__price {
+        background-color: var(--blanco);
+        color: var(--themecolor7);
+        padding: 5px 10px;
+        border-radius: 3px;
+        position: absolute;
+
+    }
+
+    .listings__image .listings__save {
+        --size: 25px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: var(--negro);
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--blanco);
+        transition: all .3s ease-in-out;
+    }
+
+    .listings__image .listings__save--active {
+        color: var(--blanco);
+        background-color: var(--themecolor7);
+    }
+
+    .listings__image .listings__save:hover {
+        color: var(--blanco);
+        background-color: var(--themecolor7);
+    }
+
+    .listings__item .listings__details {
+        padding: 10px;
+    }
+
+    .listings__details .listings__condition {
+        font-size: var(--font-size-400);
+        margin-bottom: 5px;
+    }
+    
+    .listings__details .listings__title {
+        font-size: var(--font-size-500);
+        margin-bottom: 10px;
+    }
+    
+    .listings__details .listings__title a {
+        text-decoration: none;
+        color: var(--negro);
+    }
+
+    .listings__details .listings__mileage {
+        font-size: var(--font-size-300);
+    }
+
+    .listings__details .listings__payments {
+        color: var(--themecolor7);
+        font-size: var(--font-size-400);
+        margin: 10px 0;
+    }
+
+    .listings__details .listings__carfax {
+        color: var(--themecolor7);
+        font-size: var(--font-size-400);
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .listings__details .listings__seller {
+        font-size: var(--font-size-400);
+        margin-bottom: 8px;
+    }
+
+    .listings__details .listings__city {
+        font-size: var(--font-size-300);
+    }
+
+
 }
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}

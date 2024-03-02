@@ -17,7 +17,8 @@ class listingsController extends Controller
             "wrx sti" => "subaru",
             "chaser" => "toyota",
             "silvia" => "nissan",
-            "rx7" => "silvia"
+            "rx7" => "mazda",
+            "skyline r34" => "nissan"
         ];
 
         return view("front/index", ["cars" => $cars]);
@@ -44,7 +45,11 @@ class listingsController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $car = [
+            "rx7" => "mazda"
+        ];
+
+        return view("front/show", ["car" => $car]);
     }
 
     /**

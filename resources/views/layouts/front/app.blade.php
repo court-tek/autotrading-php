@@ -13,6 +13,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="{{url("admin/plugins/fontawesome-free/css/all.min.css")}}">
+        <link rel="stylesheet" href="{{url("admin/css/themify-icons.css")}}">
 
         <!-- CSS -->
         <link href="{{ url("front/css/main.css") }}" rel="stylesheet" />
