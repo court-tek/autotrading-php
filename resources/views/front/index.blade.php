@@ -7,6 +7,12 @@
     <!-- ============================================================== -->
     <!-- pageheader  -->
     <!-- ============================================================== -->
+    <?php 
+        $location = basename($_SERVER["REQUEST_URI"]); 
+        $result = str_ireplace("%20"," ", $location);
+        
+        // die(var_dump($result));
+    ?>
     <nav aria-label="breadcrumb">
         <div class="container">
             <ol class="breadcrumb__grid">
@@ -14,7 +20,7 @@
                 <span class="breadcrumb__divider" style="">/</span>
                 <li class="breadcrumb__item breadcrumb--active" aria-current="page">Listings</li>
             </ol>
-            <h2 class="breadcrumb__page-title">Listings</h2>
+            <h2 class="breadcrumb__page-title">Listings for {{ $result }}</h2>
         </div>
     </nav>
     <!-- ============================================================== -->
@@ -27,9 +33,9 @@
     <div class="listings">
         <div class="container">
             <section class="listings__filter">
-                <div class="form-group listings__price">
-                    <label for="">New/used</label>
-                    <select name="min-price" class="listings__min-price">
+                <div class="form-group listings__condition">
+                    <label for="condition">New/used</label>
+                    <select name="condition" class="listings__condition-select">
                         <option value="new_used">New & used</option>
                         <option value="new_used">New</option>
                         <option value="used">Used</option>
@@ -37,12 +43,19 @@
                     </select>
                 </div>
                 <div class="form-group listings__price">
-                    <label for="">Price</label>
-                    <select name="min-price" class="listings__min-price">
-                        <option value="1000">0</option>
+                    <label for="min_price">Min Price</label>
+                    <select name="min_price" class="listings__min-price">
+                        <option value="2000">2000</option>
+                        <option value="4000">4000</option>
+                        <option value="6000">6000</option>
                     </select>
-                    <select name="max-price" class="listings__max-price">
-                        <option value="1000">1000</option>
+                </div>
+                <div class="form-group listings__price">
+                    <label for="max_price">Max Price</label>
+                    <select name="max_price" class="listings__max-price">
+                        <option value="2000">2000</option>
+                        <option value="4000">4000</option>
+                        <option value="6000">6000</option>
                     </select>
                 </div>
                 <div class="form-group listings__make">
@@ -69,6 +82,10 @@
                     <select name="make" class="listings__model">
                         <option value="wrx">50 Miles</option>
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="" style="color: white;">button</label>
+                    <button class="listings__update">update</button>
                 </div>
             </section>
             <section class="listings__sort-view">

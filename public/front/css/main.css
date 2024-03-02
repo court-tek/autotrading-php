@@ -1,6 +1,7 @@
 @import url('reset.css');
 @import url('welcome-header.css');
 @import url('breadcrumb.css');
+@import url('listings.css');
 @import url('welcome.css');
 
 :root {
@@ -8,7 +9,7 @@
     --themecolor2: hsl(214, 65%, 50%);
     --themecolor3: hsl(211, 100%, 50%);
     --themecolor4: hsl(210, 7%, 46%);
-    --themecolor5: #f56262;
+    --themecolor5: hsl(0, 88%, 67%);
     --rojo: hsl(0, 100%, 50%);
     --naranja: hsl(39, 100%, 50%);
     --amarillo: hsl(60, 100%, 50%);
@@ -35,6 +36,7 @@
     --column-count-two: 2;
     --column-count-three: 3;
     --column-count-four: 4;
+    --column-count-five: 5;
 }
 
 
