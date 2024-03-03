@@ -98,7 +98,7 @@
                     </div>
                     <div class="mobile-menu__links content">
                         <ul>
-                            <li>Homes for sale</li>
+                            <li>Dashboards for sale</li>
                             <li>Forclosures</li>
                             <li>For sale by owner</li>
                             <li>Open houses</li>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="mobile-menu__links content">
                         <ul>
-                            <li>Homes for sale</li>
+                            <li>Dashboards for sale</li>
                             <li>Forclosures</li>
                             <li>For sale by owner</li>
                             <li>Open houses</li>
@@ -128,7 +128,7 @@
                     </div>
                     <div class="mobile-menu__links content">
                         <ul>
-                            <li>Homes for sale</li>
+                            <li>Dashboards for sale</li>
                             <li>Forclosures</li>
                             <li>For sale by owner</li>
                             <li>Open houses</li>
@@ -138,12 +138,12 @@
                 </div>
                 <div class="mobile-menu__contentBx">
                     <div class="mobile-menu__label">
-                        <h5>Home Loans</h5>
+                        <h5>Dashboard Loans</h5>
                         <i class="fas fa-angle-down"></i>
                     </div>
                     <div class="mobile-menu__links content">
                         <ul>
-                            <li>Homes for sale</li>
+                            <li>Dashboards for sale</li>
                             <li>Forclosures</li>
                             <li>For sale by owner</li>
                             <li>Open houses</li>
@@ -158,7 +158,7 @@
                     </div>
                     <div class="mobile-menu__links content">
                         <ul>
-                            <li>Homes for sale</li>
+                            <li>Dashboards for sale</li>
                             <li>Forclosures</li>
                             <li>For sale by owner</li>
                             <li>Open houses</li>
