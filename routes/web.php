@@ -18,8 +18,10 @@ Route::namespace('App\Http\Controllers\Front')->group(function() {
     // welcome page
     Route::get('/', 'welcomeController@index');
 
-    // Main Blog Routes
+    // Main marketplace Routes
     Route::get('/listings/{model}', 'listingsController@index');
-    Route::get('/listings/saved', 'listingsController@savedListings');
-    Route::get('/listings/{id}', 'listingsController@create');
+    Route::get('/listings/{id}/{slug}', 'listingsController@show');
+
+    // account routes
+    Route::get('/account/saved', 'listingsController@save');
 });

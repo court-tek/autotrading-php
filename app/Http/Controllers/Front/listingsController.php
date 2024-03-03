@@ -75,4 +75,14 @@ class listingsController extends Controller
     {
         //
     }
+
+    // account methods
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function save(string $id)
+    {
+        return view("front/saved");
+    }
 }

@@ -113,7 +113,7 @@
                         <div class="listings__details">
                             <h5 class="listings__condition">Used</h5>
                             <h5 class="listings__title">
-                                <a href="/">2018 {{ $car }}</a>
+                                <a href="/listings/1/Skyline%20R34/">2018 {{ $car }}</a>
                             </h5>
                             <h5 class="listings__mileage">23,000 mi</h5>
                             <h5 class="listings__payments">Est. $513/mo</h5>
