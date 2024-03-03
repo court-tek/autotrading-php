@@ -1,0 +1,112 @@
+/* This applies from 0px to 768 */
+
+/* This applies from 768px onwards */
+@media (min-width: 768px) {}
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .saved__grid {
+        display: grid;
+        gap: 2rem;
+        width: 100%;
+        grid-template-columns: repeat(var(--column-count-three), 1fr);
+    }
+
+    .saved__grid .saved__item {
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border: 1px solid var(--negro);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .saved__item .saved__image {
+        background: url("../../images/pexels-wavyvisuals-18818905.jpg");
+        height: 250px;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        padding: 10px;
+        position: relative;
+    }
+
+    .saved__image .saved__price {
+        background-color: var(--blanco);
+        color: var(--themecolor7);
+        padding: 5px 10px;
+        border-radius: 3px;
+        position: absolute;
+
+    }
+
+    .saved__image .saved__save {
+        --size: 25px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        color: var(--negro);
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--blanco);
+        transition: all .3s ease-in-out;
+    }
+
+    .saved__image .saved__save--active {
+        color: var(--blanco);
+        background-color: var(--themecolor7);
+    }
+
+    .saved__image .saved__save:hover {
+        color: var(--blanco);
+        background-color: var(--themecolor7);
+    }
+
+    .saved__item .saved__details {
+        padding: 10px;
+    }
+
+    .saved__details .saved__condition {
+        font-size: var(--font-size-400);
+        margin-bottom: 5px;
+    }
+    
+    .saved__details .saved__title {
+        font-size: var(--font-size-500);
+        margin-bottom: 10px;
+    }
+    
+    .saved__details .saved__title a {
+        text-decoration: none;
+        color: var(--negro);
+    }
+
+    .saved__details .saved__mileage {
+        font-size: var(--font-size-300);
+    }
+
+    .saved__details .saved__payments {
+        color: var(--themecolor7);
+        font-size: var(--font-size-400);
+        margin: 10px 0;
+    }
+
+    .saved__details .saved__carfax {
+        color: var(--themecolor7);
+        font-size: var(--font-size-400);
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+
+    .saved__details .saved__seller {
+        font-size: var(--font-size-400);
+        margin-bottom: 8px;
+    }
+
+    .saved__details .saved__city {
+        font-size: var(--font-size-300);
+    }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

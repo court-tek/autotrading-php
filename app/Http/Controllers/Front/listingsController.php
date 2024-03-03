@@ -81,8 +81,17 @@ class listingsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function save(string $id)
+    public function save()
     {
-        return view("front/saved");
+        $cars = [
+            "wrx" => "subaru",
+            "wrx sti" => "subaru",
+            "chaser" => "toyota",
+            "silvia" => "nissan",
+            "rx7" => "mazda",
+            "skyline r34" => "nissan"
+        ];
+
+        return view("front/saved", ["cars" => $cars]);
     }
 }
