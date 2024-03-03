@@ -4,10 +4,37 @@
 @media (min-width: 768px) {}
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    /*  */
+    /* sort view */
+    .saved__sort-view {
+        --column-count: 3;
+        background-color: var(--themecolor6);
+        padding: 20px;
+        border-radius: 5px;
+        margin: 30px 0;
+    }
+    
+    .saved__sort-view .saved__grid {
+        display: grid;
+        grid-template-columns: repeat(var(--column-count), 1fr);
+        width: 300px;
+    }
+
+    .saved__grid .saved__count {
+        display: flex;
+        align-items: center;
+    }
+
+    .saved__grid .form-group {
+        display: grid;
+        gap: 0.5rem;
+    }
+    /*  */
     .saved__grid {
         display: grid;
         gap: 2rem;
         width: 100%;
+        background-color: var(--themecolor7);
         grid-template-columns: repeat(var(--column-count-three), 1fr);
     }
 

@@ -34,7 +34,6 @@
         <div class="container">
             <section class="saved__sort-view">
                 <div class="saved__grid">
-                    <div class="saved__unsave-all">Remove all listed cars</div>
                     <div class="saved__count">18 matches</div>
                     <div class="form-group saved__price">
                         <label for="">Sort By</label>
@@ -52,8 +51,8 @@
                 @foreach ($cars as $car)
                     <div class="saved__item">
                         <div class="saved__image">
-                            <div class="saved__saved-date">Saved on March 3, 2024</div>
-                            <div class="saved__unsave"><i class="fas fa-trash-alt"></i></div>
+                            <div class="saved__price">$21000</div>
+                            <div class="saved__save"><i class="fas fa-heart"></i></div>
                         </div>
                         <div class="saved__details">
                             <h5 class="saved__condition">Used</h5>
