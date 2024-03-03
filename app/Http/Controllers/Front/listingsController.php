@@ -48,8 +48,12 @@ class listingsController extends Controller
         $car = [
             "title" => "2019 acura nsx",
             "thumbnails" => [
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx1.jpeg",
                 "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx2.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx2.jpeg"
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx3.jpeg",
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx4.jpeg",
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx5.jpeg",
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx6.jpeg"
             ]
         ];
 
