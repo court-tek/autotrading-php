@@ -11,6 +11,10 @@
         gap: 1rem;
         grid-template-columns: repeat(var(--column-count), 1fr);
     }
+    .listing__gallery .listing__thumbnails {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
 
     .listing__thumbnails .listing__thumb-image {
         width: 100px;

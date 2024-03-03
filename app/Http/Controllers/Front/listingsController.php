@@ -46,7 +46,11 @@ class listingsController extends Controller
     public function show(string $id)
     {
         $car = [
-            "rx7" => "mazda"
+            "title" => "2019 acura nsx",
+            "thumbnails" => [
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx2.jpeg",
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx2.jpeg"
+            ]
         ];
 
         return view("front/show", ["car" => $car]);

@@ -7,8 +7,10 @@
     <?php 
         $location = basename($_SERVER["REQUEST_URI"]); 
         $result = str_ireplace("%20"," ", $location);
-        
-        // die(var_dump($cars));
+        // foreach ($car["thumbnails"] as $thumbnail) {
+        //     echo "$thumbnail";
+        // }
+        // die(var_dump($car));
     ?>
     <!-- ============================================================== -->
     <!-- pageheader  -->
@@ -44,7 +46,9 @@
                             </div>
                         </div>
                         <div class="listing__thumbnails">
-                            <div class="listing__thumb-image" style="background-image: url('{{ url('/images/nsx-pic1.jpeg') }}')">image thumbnails go here.</div>
+                            @foreach ($car["thumbnails"] as $thumbnail)
+                                <div class="listing__thumb-image" style="background-image: url('{{ url("$thumbnail") }}')"></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
