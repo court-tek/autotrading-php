@@ -1,7 +1,5 @@
 /* This applies from 0px to 768 */
 .landing {
-    --alpha: .6;
-    background-image: linear-gradient(to left, rgba(132, 94, 194, var(--alpha)), rgba(116, 100, 200, var(--alpha)), rgba(97, 105, 205, var(--alpha)), rgba(75, 110, 208, var(--alpha)), rgba(44, 115, 210, var(--alpha))), url("../../images/pexels-erik-mclean-18038898.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -20,8 +18,22 @@
     margin: 20px 0;
 }
 
-.welcome__tags .welcome__tag {
+.welcome__trending .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.welcome__tags {
+    display: grid;
+    gap: 1rem;
+    /* background-color: var(--themecolor5); */
+    grid-template-columns: repeat(4, 1fr);
+}
 
+.welcome__tags .welcome__tag {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: var(--font-size-300);
 }
 
 /* This applies from 768px onwards */

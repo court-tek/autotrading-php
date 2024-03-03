@@ -22,7 +22,7 @@
             <ol class="breadcrumb__grid">
                 <li class="breadcrumb__item"><a href="/">Home</a></li>
                 <span class="breadcrumb__divider" style="">/</span>
-                <li class="breadcrumb__item"><a href="/listings/Skyline%20R34/">Shop other used 2023 Subaru WRXs</a></li>
+                <li class="breadcrumb__item"><a href="/listings/Skyline%20R34/">Shop other used 2023 NSX Type S</a></li>
                 <span class="breadcrumb__divider" style="">/</span>
                 <li class="breadcrumb__item breadcrumb--active" aria-current="page">Used 2023 {{ $result }}</li>
             </ol>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="listing__description">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quasi saepe ad vitae consectetur cum soluta ratione possimus accusantium consequatur molestias nihil perspiciatis veniam minima, repudiandae eos. Aut, odio cum.</p>
-                        <p>2023 Subaru WRX Limited Local Trade, BLUETOOTH HANDS FREE, BACK UP CAMERA, KEYLESS ENTRY, LEATHER, PREMIUM SOUND, PREMIUM WHEELS, 11 Speakers, Exterior Parking Camera Rear, Navigation System, Power driver seat, Power moonroof, Power steering, Power windows, Remote keyless entry, Steering wheel mount ed audio controls.Odometer is 647 miles below market average! CARFAX One-Owner. Clean CARFAX. 19/26 City/Highway.</p>
+                        <p>2023 NSX Type S Local Trade, BLUETOOTH HANDS FREE, BACK UP CAMERA, KEYLESS ENTRY, LEATHER, PREMIUM SOUND, PREMIUM WHEELS, 11 Speakers, Exterior Parking Camera Rear, Navigation System, Power driver seat, Power moonroof, Power steering, Power windows, Remote keyless entry, Steering wheel mount ed audio controls.Odometer is 647 miles below market average! CARFAX One-Owner. Clean CARFAX. 19/26 City/Highway.</p>
                     </div>
                 </div>
             </section>

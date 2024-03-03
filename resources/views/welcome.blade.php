@@ -173,26 +173,67 @@
         </section>
 
         {{-- content --}}
-        <div class="welcome">
-            <div class="container">
-                <h1 class="welcome__heading">Helping You <br> Find Your Next Car</h1>
-
-                <section class="welcome__trending">
-                    <input type="text" name="search" class="welcome__search">
-                    <div class="welcome__title">
-                        <i class="far fa-clock"></i> Trending Now
+            <div class="hero">
+                    <div class="hero__images">
+                        <div class="hero__image">
+                            <img src="{{ url("images/nissan_silvia14_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
+                            <div class="hero__info">
+                                <div class="hero__subtitle">
+                                    Used
+                                </div>
+                                <div class="hero__title">
+                                   1995 Nissan Silvia
+                                </div>
+                                <div class="hero__info-link">
+                                    See Listing
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__image">
+                            <img src="{{ url("images/acura_nsx7.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
+                            <div class="hero__info">
+                                <div class="hero__subtitle">
+                                    Certified
+                                </div>
+                                <div class="hero__title">
+                                   1995 Nissan Silvia
+                                </div>
+                                <div class="hero__info-link">
+                                    See Listing
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero__image">
+                            <img src="{{ url("images/toyota_supra1_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
+                            <div class="hero__info">
+                                <div class="hero__subtitle">
+                                    Used
+                                </div>
+                                <div class="hero__title">
+                                   1995 Nissan Silvia
+                                </div>
+                                <div class="hero__info-link">
+                                    See Listing
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="welcome__tags">
-                        @foreach ($models as $tag)
-                            <a href="{{ url("listings/{$tag}") }}" class="welcome__tag">
-                                <i class="fas fa-search"></i>
-                                {{ $tag }}
-                            </a>
-                        @endforeach
+                    
+                    <div class="hero__indicator">
+                        <div class="hero__indicator-item">
+                            <span class="hero__indicator-number">01</span>
+                            <span class="hero__indicator-text">Sports Sedan</span>
+                        </div>
+                        <div class="hero__indicator-item">
+                            <span class="hero__indicator-number">02</span>
+                            <span class="hero__indicator-text">Sports Coupe</span>
+                        </div>
+                        <div class="hero__indicator-item">
+                            <span class="hero__indicator-number">03</span>
+                            <span class="hero__indicator-text">Sports Coupe</span>
+                        </div>
                     </div>
-                </section> 
-            </div>
-        </div>
+                </div>  
         <script src="{{url("front/js/main.js")}}"></script>
     </body>
 </html>

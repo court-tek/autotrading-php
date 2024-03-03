@@ -89,7 +89,7 @@
     }
 
     .listing__details-column .listing__save-item {
-        --size: 25px;
+        --size: 28px;
         position: absolute;
         right: 10px;
         top: 10px;
@@ -102,13 +102,9 @@
         align-items: center;
         background: var(--blanco);
         transition: all .3s ease-in-out;
+        cursor: pointer;
     }
     
-    /* .listing__details-column  {
-        color: var(--blanco);
-        background-color: var(--themecolor7);
-    } */
-
     .listing__details-column .listing__save-item:hover, .listing__details-column .listing__save--active{
         color: var(--blanco);
         background-color: var(--themecolor7);
