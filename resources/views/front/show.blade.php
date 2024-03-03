@@ -33,23 +33,26 @@
     <!-- ============================================================== -->
     <div class="listing">
         <div class="container">
-            <section class="listing__media-column">
-                <div class="listing__gallery">
-                    <div class="listing__slider">
-                        <div class="listing__main-image">
-                            <div class="listing__left-arrow"><i class="ti-angle-left"></i></div>
-                            The main image goes here.
-                            <div class="listing__right-arrow"><i class="ti-angle-right"></i></div>
+            <section class="listing__content-area">
+                <div class="listing__media-column">
+                    <div class="listing__gallery">
+                        <div class="listing__slider">
+                            <div class="listing__main-image">
+                                <div class="listing__left-arrow"><i class="ti-angle-left"></i></div>
+                                The main image goes here.
+                                <div class="listing__right-arrow"><i class="ti-angle-right"></i></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="listing__thumbnails">
-                        <div class="listing__thumb-image">image thumbnails go here.</div>
+                        <div class="listing__thumbnails">
+                            <div class="listing__thumb-image" style="background-image: url('{{ url('/images/nsx-pic1.jpeg') }}')">image thumbnails go here.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="listing__details-column">
                     <div class="listing__condition">Used</div>
                     <h3 class="listing__title">2023 Acura NSX Type S</h3>
                     <h4 class="listing__price">$123,500</h4>
+                    <h4 class="listing__status"><i class="fas fa-fire"></i> Hot Car – this car is popular and expected to sell soon.</h4>
                     <div class="listing__more-details">
                         <div class="listing__info">
                             <label for="vin">Vin</label>
