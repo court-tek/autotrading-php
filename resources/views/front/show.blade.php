@@ -10,7 +10,9 @@
         // foreach ($car["thumbnails"] as $thumbnail) {
         //     echo "$thumbnail";
         // }
-        // die(var_dump($car));
+        $image_1 = $car["thumbnails"][6];
+    
+        // die(var_dump($image_1));
     ?>
     <!-- ============================================================== -->
     <!-- pageheader  -->
@@ -40,9 +42,9 @@
                     <div class="listing__gallery">
                         <div class="listing__slider">
                             <div class="listing__main-image">
-                                <div class="listing__left-arrow"><i class="ti-angle-left"></i></div>
-                                The main image goes here.
-                                <div class="listing__right-arrow"><i class="ti-angle-right"></i></div>
+                                <div class="listing__arrow"><i class="ti-angle-left"></i></div>
+                                <div class="listing__arrow"><i class="ti-angle-right"></i></div>
+                                <div class="listing__image-1" style='background-image: url("{{ url("$image_1") }}")'></div>
                             </div>
                         </div>
                         <div class="listing__thumbnails">
@@ -57,6 +59,7 @@
                     <h3 class="listing__title">2023 Acura NSX Type S</h3>
                     <h4 class="listing__price">$123,500</h4>
                     <h4 class="listing__status"><i class="fas fa-fire"></i> Hot Car – this car is popular and expected to sell soon.</h4>
+                    <div class="listing__save-item listing__save--active"><i class="fas fa-heart"></i> <span class="listing__saved-status"></span></div>
                     <div class="listing__more-details">
                         <div class="listing__info">
                             <label for="vin">Vin</label>
@@ -68,7 +71,7 @@
                         </div>
                         <div class="listing__info">
                             <label for="transmission">Transmission</label>
-                            <h5 name="transmission">9 Spd Dual Clutch</h5>
+                            <h5 name="transmission">9-Speed Automatic</h5>
                         </div>
                         <div class="listing__info">
                             <label for="fuel">Fuel</label>
@@ -97,6 +100,7 @@
                     </div>
                     <div class="listing__description">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium quasi saepe ad vitae consectetur cum soluta ratione possimus accusantium consequatur molestias nihil perspiciatis veniam minima, repudiandae eos. Aut, odio cum.</p>
+                        <p>2023 Subaru WRX Limited Local Trade, BLUETOOTH HANDS FREE, BACK UP CAMERA, KEYLESS ENTRY, LEATHER, PREMIUM SOUND, PREMIUM WHEELS, 11 Speakers, Exterior Parking Camera Rear, Navigation System, Power driver seat, Power moonroof, Power steering, Power windows, Remote keyless entry, Steering wheel mount ed audio controls.Odometer is 647 miles below market average! CARFAX One-Owner. Clean CARFAX. 19/26 City/Highway.</p>
                     </div>
                 </div>
             </section>

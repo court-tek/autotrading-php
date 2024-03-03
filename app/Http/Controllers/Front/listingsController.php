@@ -53,7 +53,8 @@ class listingsController extends Controller
                 "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx3.jpeg",
                 "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx4.jpeg",
                 "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx5.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx6.jpeg"
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx6.jpeg",
+                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx7.jpg",
             ]
         ];
 
