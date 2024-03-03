@@ -47,7 +47,7 @@
                     </span>
                 </div>
                 <div class="navigation__user-dropdown">
-                    my account
+                    <a href="/account/saved">my account</a>
                     <i class="fas fa-chevron-down"></i>
                 </div>
             </div>

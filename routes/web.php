@@ -19,8 +19,9 @@ Route::namespace('App\Http\Controllers\Front')->group(function() {
     Route::get('/', 'welcomeController@index');
 
     // Main marketplace Routes
-    Route::get('/listings/{model}', 'listingsController@index');
     Route::get('/listings/{id}/{slug}', 'listingsController@show');
+    // Route::get('/listings/{model}/{id}', 'listingsController@index');
+    Route::get('/listings/{model}', 'listingsController@index');
 
     // account routes
     Route::get('/account/saved', 'listingsController@save');
