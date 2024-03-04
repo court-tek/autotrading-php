@@ -22,7 +22,7 @@
       <div class="container-fluid">
         <div class="row">
           <!-- left column -->
-          <div class="col-md-12">
+          {{-- <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -30,7 +30,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form method="POST" action="" >
+              <form >
                 <div class="card-body">
                   <div class="row">
                     <div class="col-md-6">
@@ -143,7 +143,7 @@
             </div>
             <!-- /.card -->
             
-          </div>
+          </div> --}}
         </div>
       </div><!--/. container-fluid -->
     </section>
