@@ -1,0 +1,92 @@
+/* This applies from 0px to 768 */
+
+/* This applies from 768px onwards */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .login {
+        
+    }
+
+    .aligner {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .login__form {
+        /* background: var(--themecolor1); */
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 20px;
+        width: 350px;
+    }
+
+    .login__form h3 {
+        text-align: center;
+        font-size: var(--font-size-800);
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .login__form form {
+        display: grid;
+        gap: 1.5rem;
+        grid-template-columns: 1fr;
+    }
+    
+    .login__form form .form-group {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .form-group input[type=email], input[type=text] ,input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        border: 1px solid var(--themecolor9);
+        border-radius: 4px;
+    }
+
+    .login__form input[type=submit] {
+        border: 1px solid var(--themecolor1);
+        color: var(--themecolor1);
+        background-color: var(--blanco);
+        border-radius: 4px;
+        padding: 12px 20px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        transition: all .3s ease-in-out;
+    }
+
+    .login__form input[type=submit]:hover {
+        background-color: var(--themecolor1);
+        color: var(--blanco);
+    }
+
+    .login__footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        border-top: 1px solid var(--negro);
+    }
+
+    .login__footer-left, .login__footer-right {
+        padding: 12px 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login__footer-left a, .login__footer-right a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: var(--negro);
+    } 
+
+    .login__footer-item:hover a {
+        color: var(--rojo);
+    } 
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

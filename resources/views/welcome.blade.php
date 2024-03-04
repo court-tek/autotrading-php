@@ -10,6 +10,7 @@
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="{{url("admin/plugins/fontawesome-free/css/all.min.css")}}">
+        <link rel="stylesheet" href="{{url("admin/css/themify-icons.css")}}">
 
         <!-- CSS -->
         <link href="{{ url("front/css/main.css") }}" rel="stylesheet" />
@@ -43,6 +44,7 @@
                         <a href="#" class="navigation__link">Financing</a>
                         <a href="#" class="navigation__link">News</a>
                     </div>
+
                 </div>
     
                 {{-- mobile open btn --}}
@@ -60,10 +62,20 @@
                             Hi, Courtney
                         </span>
                     </div>
+
                     <div class="navigation__user-dropdown">
-                        my account
-                        <i class="fas fa-chevron-down"></i>
+                        <i class="ti-menu"></i>
                     </div>
+                </div>
+
+                {{-- dropdown menu --}}
+                <div class="navigation__dropdown-content">
+                    <h1>Hi, Courtney</h1>
+                    <i class="ti-close"></i>
+                    <a href="#home">Saved Cars (6)</a>
+                    <a href="#about">Your Garage</a>
+                    <a href="#contact">Account Info</a>
+                    <a href="#contact">Sign out</a>
                 </div>
             </header>
         </div>
@@ -173,67 +185,89 @@
         </section>
 
         {{-- content --}}
-            <div class="hero">
-                    <div class="hero__images">
-                        <div class="hero__image">
-                            <img src="{{ url("images/nissan_silvia14_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
-                            <div class="hero__info">
-                                <div class="hero__subtitle">
-                                    Used
-                                </div>
-                                <div class="hero__title">
-                                   1995 Nissan Silvia
-                                </div>
-                                <div class="hero__info-link">
-                                    See Listing
-                                </div>
-                            </div>
+        <section class="hero">
+            <div class="hero__images">
+                <div class="hero__image">
+                    <img src="{{ url("images/nissan_silvia14_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
+                    <div class="hero__info">
+                        <div class="hero__subtitle">
+                            Used
                         </div>
-                        <div class="hero__image">
-                            <img src="{{ url("images/acura_nsx7.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
-                            <div class="hero__info">
-                                <div class="hero__subtitle">
-                                    Certified
-                                </div>
-                                <div class="hero__title">
-                                   1995 Nissan Silvia
-                                </div>
-                                <div class="hero__info-link">
-                                    See Listing
-                                </div>
-                            </div>
+                        <div class="hero__title">
+                           1995 Nissan Silvia
                         </div>
-                        <div class="hero__image">
-                            <img src="{{ url("images/toyota_supra1_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
-                            <div class="hero__info">
-                                <div class="hero__subtitle">
-                                    Used
-                                </div>
-                                <div class="hero__title">
-                                   1995 Nissan Silvia
-                                </div>
-                                <div class="hero__info-link">
-                                    See Listing
-                                </div>
-                            </div>
+                        <div class="hero__info-link">
+                            See Listing
                         </div>
                     </div>
-                    
-                    <div class="hero__indicator">
-                        <div class="hero__indicator-item">
-                            <span class="hero__indicator-number">01</span>
-                            <span class="hero__indicator-text">Sports Sedan</span>
+                </div>
+                <div class="hero__image">
+                    <img src="{{ url("images/acura_nsx7.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
+                    <div class="hero__info">
+                        <div class="hero__subtitle">
+                            Certified
                         </div>
-                        <div class="hero__indicator-item">
-                            <span class="hero__indicator-number">02</span>
-                            <span class="hero__indicator-text">Sports Coupe</span>
+                        <div class="hero__title">
+                           1995 Nissan Silvia
                         </div>
-                        <div class="hero__indicator-item">
-                            <span class="hero__indicator-number">03</span>
-                            <span class="hero__indicator-text">Sports Coupe</span>
+                        <div class="hero__info-link">
+                            See Listing
                         </div>
                     </div>
-                </div>  
+                </div>
+                <div class="hero__image">
+                    <img src="{{ url("images/toyota_supra1_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
+                    <div class="hero__info">
+                        <div class="hero__subtitle">
+                            Used
+                        </div>
+                        <div class="hero__title">
+                           1995 Nissan Silvia
+                        </div>
+                        <div class="hero__info-link">
+                            See Listing
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero__indicator">
+                <div class="hero__indicator-item">
+                    <span class="hero__indicator-number">01</span>
+                    <span class="hero__indicator-text">Sports Sedan</span>
+                </div>
+                <div class="hero__indicator-item">
+                    <span class="hero__indicator-number">02</span>
+                    <span class="hero__indicator-text">Sports Coupe</span>
+                </div>
+                <div class="hero__indicator-item">
+                    <span class="hero__indicator-number">03</span>
+                    <span class="hero__indicator-text">Sports Coupe</span>
+                </div>
+            </div>
+        </section> 
+        
+        {{-- trending --}}
+        <section class="welcome__trending">
+            <div class="container">
+                <input type="text" name="search" class="welcome__search">
+                <div class="welcome__title">
+                    <i class="far fa-clock"></i> Trending Now
+                </div>
+                <div class="welcome__tags">
+                    @foreach ($models as $tag)
+                        <a href="{{ url("listings/{$tag}") }}" class="welcome__tag">
+                            <i class="fas fa-search"></i>
+                            {{ $tag }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </section>
         <script src="{{url("front/js/main.js")}}"></script>
     </body>
 </html>
+
+
+
+

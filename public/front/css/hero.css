@@ -43,6 +43,7 @@
     .hero__info .hero__subtitle {
         font-size: 1.2rem;
         color: var(--blanco);
+        margin-bottom: 20px;
     }
 
     .hero__info .hero__title {
@@ -50,10 +51,11 @@
         font-weight: 700;
         width: 310px;
         color: var(--blanco);
+        margin-bottom: 20px;
     }
 
     .hero__info .hero__info-link {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
         color: var(--blanco);
         cursor: pointer;
     }
@@ -70,7 +72,6 @@
     }
 
     .hero .hero__indicator .hero__indicator-item {
-           
         display: flex;
         align-items: center;
         cursor: pointer;

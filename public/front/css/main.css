@@ -1,4 +1,5 @@
 @import url('reset.css');
+@import url('login.css');
 @import url('welcome-header.css');
 @import url('hero.css');
 @import url('breadcrumb.css');
@@ -9,7 +10,7 @@
 @import url('welcome.css');
 
 :root {
-    --themecolor1: hsl(263, 45%, 56%);
+    --themecolor1: hsl(271, 58%, 29%);
     --themecolor2: hsl(214, 65%, 50%);
     --themecolor3: hsl(211, 100%, 50%);
     --themecolor4: hsl(210, 7%, 46%);
@@ -17,6 +18,9 @@
     --themecolor6: hsl(0, 0%, 95%);
     --themecolor7: hsl(295, 100%, 40%);
     --themecolor8: hsl(0, 0%, 40%);
+    --themecolor9: hsl(0, 0%, 80%);
+    --error-text-bg: hsl(353, 70%, 91%);
+    --error-text-color: hsl(354, 61%, 28%);
     --rojo: hsl(0, 100%, 50%);
     --naranja: hsl(39, 100%, 50%);
     --amarillo: hsl(60, 100%, 50%);
@@ -60,11 +64,13 @@ body {
 }
 
 
-.danger-message {
-    background-color: #FF7F7F;
-    margin: 20px 0 20px 0;
-    color: white;
-    padding: 0.3rem;
+.error-sub-text {
+    background-color: var(--error-text-bg);
+    border-radius: 4px;
+    color: var(--error-text-color);
+    padding: 0.6rem;
+    font-size: 0.8rem;
+
 }
 
 .success-message {

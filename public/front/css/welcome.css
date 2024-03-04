@@ -31,6 +31,7 @@
 }
 
 .welcome__tags .welcome__tag {
+    border: 1px solid var(--themecolor1);
     text-decoration: none;
     font-weight: 600;
     font-size: var(--font-size-300);
@@ -66,7 +67,7 @@
 
     .welcome__trending .welcome__title {
         font-size: var(--font-size-600);
-        color: var(--blanco);
+        color: var(--negro);
         text-align: center;
         padding: 20px;
         text-transform: uppercase;
@@ -78,9 +79,9 @@
 
     .welcome__tags .welcome__tag {
         padding: 10px 20px;
-        border-radius: 45px;
-        color: var(--blanco);
-        border: 1px solid var(--blanco);
+        border-radius: 5px;
+        color: var(--themecolor1);
+        border: 1px solid var(--themecolor1);
         display: inline-block;
         margin-bottom: 20px;
         margin-right: 20px;
@@ -88,8 +89,8 @@
     }
 
     .welcome__tags .welcome__tag:hover {
-        background-color: var(--blanco);
-        color: var(--themecolor1);
+        background-color: var(--themecolor1);
+        color: var(--blanco);
         font-weight: 600;
     }
 }
