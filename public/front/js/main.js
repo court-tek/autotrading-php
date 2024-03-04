@@ -11,6 +11,15 @@ window.onload = () => {
 	// hamburger icon 
 	let openButton = document.getElementsByClassName('navigation__burger-menu')[0];
 
+	// account hamburger icon
+	let accountOpen = document.getElementsByClassName('navigation__user-dropdown')[0];
+
+	// account close x button
+	let accountClose = document.getElementsByClassName('account-dropdown__close-btn')[0];
+
+	// account drop menu 
+	let accountMenu = document.getElementsByClassName('account-dropdown')[0];
+
 	// function y loops
 	for (let i = 0; i < accordions.length; i++) {
 		accordions[i].addEventListener('click', function() {
@@ -19,6 +28,18 @@ window.onload = () => {
 	}
 
 	// ------------------------------------------------------------------
+
+	// account modal function
+	accountOpen.addEventListener('click', () => {
+		accountMenu.classList.add('account-dropdown--active');
+	})
+
+	accountClose.addEventListener('click', () => {
+		accountMenu.classList.remove('account-dropdown--active');
+	})
+
+	// ------------------------------------------------------------------
+
 	// hamburger slide menu functionality
 	openButton.addEventListener('click', () => {
 		mobileMenu.classList.add('mobile-menu--open');
@@ -28,14 +49,6 @@ window.onload = () => {
 	closeButton.addEventListener('click', () => {
 		mobileMenu.classList.remove('mobile-menu--open');
 	});
-
-	// phone modal functionality
-	let showModal = () => {
-		if (modalState === false && screen.width > 576) {
-			phoneModal.classList.add('phone-modal--visibility');
-			modalState = true;
-		}
-	};
 
 
 

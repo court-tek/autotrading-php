@@ -40,15 +40,54 @@
             </div>
 
             {{-- right nav --}}
-            <div class="{{ $location == "/" ? "navigation__right-menu" : "navigation__right-menu-pages" }}">
+            <div class="navigation__right-menu">
                 <div class="navigation__user-img">
-                    <span class="navigation__user-greeting">
-                        Hi, Courtney
-                    </span>
+                    @if (Route::has('login'))
+                        @auth
+                            <span class="navigation__user-greeting">
+                                Hi, {{ auth()->user()->name }}
+                            </span>
+                            {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
+                            @else
+                                <a href="{{ route('login') }}" class="">Log in</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="">Register</a>
+                            @endif
+                        @endauth
+                    @endif
                 </div>
+
                 <div class="navigation__user-dropdown">
-                    <a href="/account/saved">my account</a>
-                    <i class="fas fa-chevron-down"></i>
+                    <i class="ti-menu"></i>
+                </div>
+            </div>
+
+            {{-- dropdown menu --}}
+            <div class="account-dropdown">
+                <div class="account-dropdown__content">
+                    <div class="account-dropdown__close-btn">
+                        <i class="ti-close"></i>
+                    </div>
+
+                    <h1>Hi, Courtney</h1>
+                    <a href="#home">
+                        <i class="ti-heart"></i> 
+                        <span class="account-link">Saved Cars (6)</span>
+                    </a>
+                    <a href="#home">
+                        <i class="ti-car"></i> 
+                        <span class="account-link">Your Garage</span>
+                    </a>
+                    <a href="#home">
+                        <i class="ti-user"></i> 
+                        <span class="account-link">Account Info</span>
+                    </a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="dropdown-item btn btn-link">Log off</button>
+                        {{-- <a class="account-dropdown__signout">Sign out</a> --}}
+                    </form>
                 </div>
             </div>
         </header>

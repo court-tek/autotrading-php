@@ -49,18 +49,40 @@
     
                 {{-- mobile open btn --}}
                 <div class="navigation__burger-menu">
-                    <span class="navigation__user-greeting">
-                        Hi, Courtney
-                    </span>
+                    @if (Route::has('login'))
+                        @auth
+                            <span class="navigation__user-greeting">
+                                Hi, {{ auth()->user()->name }}
+                            </span>
+                            {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
+                            @else
+                                <a href="{{ route('login') }}" class="navigation__login-link">Log in</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="navigation__register-link">Register</a>
+                            @endif
+                        @endauth
+                    @endif
                     <i class="fas fa-bars"></i>
                 </div>
     
                 {{-- right nav --}}
                 <div class="navigation__right-menu">
                     <div class="navigation__user-img">
-                        <span class="navigation__user-greeting">
-                            Hi, Courtney
-                        </span>
+                        @if (Route::has('login'))
+                            @auth
+                                <span class="navigation__user-greeting">
+                                    Hi, {{ auth()->user()->name }}
+                                </span>
+                                {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
+                                @else
+                                    <a href="{{ route('login') }}" class="">Log in</a>
+
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="">Register</a>
+                                @endif
+                            @endauth
+                        @endif
                     </div>
 
                     <div class="navigation__user-dropdown">
@@ -69,13 +91,41 @@
                 </div>
 
                 {{-- dropdown menu --}}
-                <div class="navigation__dropdown-content">
-                    <h1>Hi, Courtney</h1>
-                    <i class="ti-close"></i>
-                    <a href="#home">Saved Cars (6)</a>
-                    <a href="#about">Your Garage</a>
-                    <a href="#contact">Account Info</a>
-                    <a href="#contact">Sign out</a>
+                <div class="account-dropdown">
+                    <div class="account-dropdown__content">
+                        <div class="account-dropdown__close-btn">
+                            <i class="ti-close"></i>
+                        </div>
+                        
+                        @if (Route::has('login'))
+                            @auth
+                                <h1>Hi, {{ auth()->user()->name }}</h1>
+                                {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
+                                @else
+                                    {{-- <a href="{{ route('login') }}" class="">Log in</a> --}}
+                                @if (Route::has('register'))
+                                    {{-- <a href="{{ route('register') }}" class="">Register</a> --}}
+                                @endif
+                            @endauth
+                        @endif
+                        <a href="#home">
+                            <i class="ti-heart"></i> 
+                            <span class="account-link">Saved Cars (6)</span>
+                        </a>
+                        <a href="#home">
+                            <i class="ti-car"></i> 
+                            <span class="account-link">Your Garage</span>
+                        </a>
+                        <a href="#home">
+                            <i class="ti-user"></i> 
+                            <span class="account-link">Account Info</span>
+                        </a>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a type="submit" class="account-dropdown__signoff">Sign off</a>
+                            {{-- <a class="account-dropdown__signout">Sign out</a> --}}
+                        </form>
+                    </div>
                 </div>
             </header>
         </div>

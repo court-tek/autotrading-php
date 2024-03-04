@@ -251,21 +251,92 @@
         padding: 20px;
     }
 
-    .navigation__user-dropdown .ti-menu {
+    .account-dropdown {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, .7);
+        display: none;
+        gap: 1.1rem;
+        grid-template-rows: repeat(3, 1fr);
+        transition: all .3s ease-in-out;
+    }
+
+    .account-dropdown--active {
+        display: grid;
+    }
+
+    .account-dropdown .account-dropdown__content {
+        position: absolute;
+        right: 170px;
+        background-color: var(--blanco);
+        width: 350px;
+        display: grid;
+        gap: 1.1rem;
+        grid-template-rows: repeat(3, 1fr);
+        padding: 30px;
+    }
+
+    .account-dropdown .account-dropdown__close-btn {
+        position: absolute;
+        right: 0;
+        padding: 20px;
+        transition: all .3s ease-in-out;
         cursor: pointer;
     }
 
-    .navigation .navigation__dropdown-content {
-        position: absolute;
-        display: none;
-        gap: 1.1rem;
-        top: 0;
-        right: 0;
-        grid-template-rows: repeat(3, 1fr);
-        background-color: var(--blanco);
-        width: 300px;
-        padding: 30px;
-        z-index: 99;
+    .account-dropdown__close-btn .ti-close {
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+    
+    .account-dropdown .account-dropdown__close-btn:hover {       
+        background-color: var(--themecolor10);
+    }
+
+    .account-dropdown h1 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    .account-dropdown a {
+        text-decoration: none;
+        color: var(--negro);
+    }
+
+    .account-dropdown a i {
+        margin-right: 8px;
+    }
+
+    .account-dropdown a span:hover {
+        text-decoration: underline;
+        color: var(--themecolor1);
+    }
+
+    .account-dropdown a:hover i {
+        color: var(--themecolor1);
+    }
+
+    .account-dropdown .account-dropdown__signout {
+        border: 2px solid var(--themecolor1);
+        text-align: center;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 12px;
+        border-radius: 4px;
+        color: var(--themecolor1);
+        transition: all .3s ease-in-out;
+    }
+
+    .account-dropdown .account-dropdown__signout:hover {
+        background-color: var(--themecolor1);
+        color: var(--blanco);
+    }
+
+    .navigation__user-dropdown .ti-menu {
+        cursor: pointer;
     }
 
    .navigation__burger-menu {
