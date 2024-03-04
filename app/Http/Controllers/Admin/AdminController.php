@@ -8,19 +8,27 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     /**
+     * Displays the admin home dashboard.
+     */
+    public function dashboard()
+    {
+        return view("admin/dashboard");
+    }
+
+    /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view("admin/index");
+        return view("admin/listings/index");
     }
-
+    
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view("admin/listings/create");
     }
 
     /**
@@ -28,7 +36,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return $request;
     }
 
     /**
@@ -44,7 +52,7 @@ class AdminController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view("admin/listings/edit");
     }
 
     /**

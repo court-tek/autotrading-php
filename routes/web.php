@@ -24,12 +24,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function() {
-    // ADmin home page
-    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard.index');
+    // Admin home page
+    Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
     
     // // Article routes
-    // Route::get('articles-create', 'ArticleController@create')->middleware(['auth', 'is_admin']);
-    // Route::get('articles-all', 'ArticleController@index')->middleware(['auth', 'is_admin']);
+    Route::get('listings', [AdminController::class, 'index'])->name('all');
+    Route::get('listings/create', [AdminController::class, 'create'])->name('create');
+    Route::get('listings/{id}/edit', [AdminController::class, 'edit'])->name('edit');
     // Route::get('articles-edit/{id}', 'ArticleController@edit')->middleware(['auth', 'is_admin'])->name('articles.edit');
     // Route::post('/articles', [ArticleController::class, 'store'])->name('articles');
     // Route::patch('/articles/{id}', [ArticleController::class, 'update'])->name('articles.update');
