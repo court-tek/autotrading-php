@@ -241,6 +241,18 @@
         /* background-color: var(--themecolor1); */
     }
 
+    .navigation__user-img .navigation__auth {
+        color: var(--negro);
+    }
+
+    .navigation__user-img .navigation__signin-link:hover {
+        text-decoration: underline;
+    }
+
+    .navigation__user-img .navigation__signin-link {
+        text-decoration: none;
+    }
+
     .navigation__right-menu .navigation__user-dropdown {
         display: flex;
         padding: 20px;
@@ -319,20 +331,38 @@
         color: var(--themecolor1);
     }
 
-    .account-dropdown .account-dropdown__signout {
+    .account-dropdown .account-dropdown__trans-btn {
         border: 2px solid var(--themecolor1);
         text-align: center;
         font-weight: 600;
         font-size: 1rem;
+        width: 100%;
         padding: 12px;
         border-radius: 4px;
         color: var(--themecolor1);
         transition: all .3s ease-in-out;
     }
 
-    .account-dropdown .account-dropdown__signout:hover {
+    .account-dropdown .account-dropdown__solid-btn {
+        text-align: center;
+        font-weight: 600;
         background-color: var(--themecolor1);
+        font-size: 1rem;
+        width: 100%;
+        padding: 12px;
+        border-radius: 4px;
         color: var(--blanco);
+        transition: all .3s ease-in-out;
+
+    }
+
+    .account-dropdown .account-dropdown__trans-btn:hover {
+        background-color: var(--themecolor11);
+        color: var(--blanco);
+    }
+
+    .account-dropdown .account-dropdown__solid-btn:hover {
+        background-color: var(--themecolor11);
     }
 
     .navigation__user-dropdown .ti-menu {

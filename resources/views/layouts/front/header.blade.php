@@ -49,11 +49,10 @@
                             </span>
                             {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
                             @else
-                                <a href="{{ route('login') }}" class="">Log in</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="">Register</a>
-                            @endif
+                                <div class="navigation__auth">
+                                    <i class="ti-user"></i>
+                                    <a href="{{ route('login') }}" class="navigation__signin-link">Sign In</a>
+                                </div>
                         @endauth
                     @endif
                 </div>
@@ -69,25 +68,37 @@
                     <div class="account-dropdown__close-btn">
                         <i class="ti-close"></i>
                     </div>
-
-                    <h1>Hi, Courtney</h1>
-                    <a href="#home">
-                        <i class="ti-heart"></i> 
-                        <span class="account-link">Saved Cars (6)</span>
-                    </a>
-                    <a href="#home">
-                        <i class="ti-car"></i> 
-                        <span class="account-link">Your Garage</span>
-                    </a>
-                    <a href="#home">
-                        <i class="ti-user"></i> 
-                        <span class="account-link">Account Info</span>
-                    </a>
-                    <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submit" class="dropdown-item btn btn-link">Log off</button>
-                        {{-- <a class="account-dropdown__signout">Sign out</a> --}}
-                    </form>
+                    
+                    @if (Route::has('login'))
+                        @auth
+                            <h1>Hi, {{ auth()->user()->name }}</h1>
+                            {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
+                            <a href="#home">
+                                <i class="ti-heart"></i> 
+                                <span class="account-link">Saved Cars (6)</span>
+                            </a>
+                            <a href="#home">
+                                <i class="ti-car"></i> 
+                                <span class="account-link">Your Garage</span>
+                            </a>
+                            <a href="#home">
+                                <i class="ti-user"></i> 
+                                <span class="account-link">Account Info</span>
+                            </a>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button type="submit" class="account-dropdown__trans-btn">Sign off</button>
+                            </form>
+                            @else
+                                <h1>Sign in</h1>
+                                <p>Save cars and add cars to Your Garage, and more.</p>
+                                <a href="{{ route('login') }}" class="account-dropdown__trans-btn">Sign in</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="account-dropdown__solid-btn">Register</a>
+                            @endif
+                        @endauth
+                    @endif
+                    
                 </div>
             </div>
         </header>
