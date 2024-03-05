@@ -30,10 +30,10 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     // // Article routes
     Route::get('listings', [AdminController::class, 'index'])->name('all');
     Route::get('listings/create', [AdminController::class, 'create'])->name('create');
-    Route::get('listings/{slug}/{id}/edit', [AdminController::class, 'edit'])->name('edit');
     Route::post('/listings', [AdminController::class, 'store'])->name('listing');
+    Route::get('listings/{slug}/{id}/edit', [AdminController::class, 'edit'])->name('edit');
+    Route::patch('/listings/{slug}/{id}', [AdminController::class, 'update'])->name('update');
     // Route::get('articles-edit/{id}', 'ArticleController@edit')->middleware(['auth', 'is_admin'])->name('articles.edit');
-    // Route::patch('/articles/{id}', [ArticleController::class, 'update'])->name('articles.update');
     // Route::get('articles/{id}/status', [ArticleController::class, 'status'])->name('photos.status');
     // Route::get('/articles-delete/{id}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 

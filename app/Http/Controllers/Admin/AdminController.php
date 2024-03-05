@@ -79,7 +79,7 @@ class AdminController extends Controller
         $listing->state = $request->state;
         $listing->description = $request->description;
 
-        $listing->slug = Helper::slugify("{$request->make}-{$request->model}-{$request->city}-{$request->state}");
+        $listing->slug = Helper::slugify("{$request->year}-{$request->make}-{$request->model}-{$request->city}-{$request->state}");
         $listing->save();
 
         session()->flash('success', 'Created New Auto Listing Successfully');
@@ -100,16 +100,46 @@ class AdminController extends Controller
      */
     public function edit(string $slug, $id)
     {
-        $listing = Listing::where(['is' => $id, 'slug' => $slug])->first();
+        $listing = Listing::where(['id' => $id, 'slug' => $slug])->first();
         return view("admin/listings/edit", ['listing' => $listing]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $slug,  string $id)
     {
-        //
+        $listing = Listing::where(['id' => $id, 'slug' => $slug])->first();
+
+        $listing->title = $request->title;
+        $listing->vin_number = $request->vin_number;
+        $listing->model = $request->model;
+        $listing->make = $request->make;
+        $listing->fuel_type = $request->fuel_type;
+        $listing->color = $request->color;
+        $listing->body_type = $request->body_type;
+        $listing->driveline = $request->driveline;
+        $listing->mileage = $request->mileage;
+        $listing->type = $request->type;
+        $listing->transmission = $request->transmission;
+        $listing->interior = $request->interior;
+        $listing->engine = $request->engine;
+        $listing->mpg = $request->mpg;
+        $listing->wheel_type = $request->wheel_type;
+        $listing->horsepower = $request->horsepower;
+        $listing->year = $request->year;
+        $listing->options = $request->options;
+        $listing->price = $request->price;
+        $listing->city = $request->city;
+        $listing->state = $request->state;
+        $listing->description = $request->description;
+        $listing->slug = $request->slug;
+
+        $listing->save();
+
+        session()->flash('success', 'Updated The Auto Listing Successfully');
+
+        return redirect("/admin/listings/{$listing->slug}/{$listing->id}/edit");
     }
 
     /**
