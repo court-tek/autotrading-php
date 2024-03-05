@@ -21,7 +21,7 @@
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-          <!-- left column -->
+          <!-- whole column -->
           <div class="col-md-12">
             <!-- general form elements -->
             <div class="card card-primary">
@@ -39,26 +39,52 @@
                         <label for="title">Title</label>
                         <input type="text" class="form-control" name="title" value="{{ old('title') }}" id="title" placeholder="Enter Title">
                       </div>
+                      @error('title')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="vin_number">Vin Number</label>
                         <input type="text" class="form-control" name="vin_number" value="{{ old('vin_number') }}" id="vin_number" placeholder="Vin">
                       </div>
+                      @error('vin_number')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="make">Make</label>
                         <input type="text" class="form-control" name="make" value="{{ old('make') }}" id="make" placeholder="Make">
                       </div>
+
                       <div class="form-group">
                         <label for="body_type">Body Type</label>
                         <input type="text" class="form-control" name="body_type" value="{{ old('body_type') }}" id="body_type" placeholder="Body Type">
                       </div>
+                      @error('body_type')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="mileage">Mileage</label>
                         <input type="text" class="form-control" name="mileage" value="{{ old('mileage') }}" id="mileage" placeholder="Mileage">
                       </div>
+                      @error('mileage')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="transmission">Transmission</label>
                         <input type="text" class="form-control" name="transmission" value="{{ old('transmission') }}" id="transmission" placeholder="Transmission">
                       </div>
+                      @error('transmission')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="engine">Engine</label>
                         <input type="text" class="form-control" name="engine" value="{{ old('engine') }}" id="engine" placeholder="Engine">
@@ -96,6 +122,11 @@
                         <label for="fuel_type">Fuel Type</label>
                         <input type="text" class="form-control" name="fuel_type" value="{{ old('fuel_type') }}" id="fuel_type" placeholder="Fuel Type">
                       </div>
+                      @error('fuel_type')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="model">Model</label>
                         <input type="text" class="form-control" name="model" value="{{ old('model') }}" id="model" placeholder="Model">
@@ -104,10 +135,20 @@
                         <label for="color">Color</label>
                         <input type="text" class="form-control" name="color" value="{{ old('color') }}" id="color" placeholder="Color">
                       </div>
+                      @error('color')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="driveline">Driveline</label>
                         <input type="text" class="form-control" name="driveline" value="{{ old('driveline') }}" id="driveline" placeholder="Driveline">
                       </div>
+                      @error('driveline')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="type">Type</label>
                         <input type="text" class="form-control" name="type" value="{{ old('type') }}" id="type" placeholder="Sports etc">
@@ -116,10 +157,20 @@
                         <label for="interior">Interior</label>
                         <input type="text" class="form-control" name="interior" value="{{ old('interior') }}" id="interior" placeholder="Interior">
                       </div>
+                      @error('interior')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="mpg">MPG</label>
                         <input type="text" class="form-control" name="mpg" value="{{ old('mpg') }}" id="mpg" placeholder="Mpg">
                       </div>
+                      @error('mpg')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
                       <div class="form-group">
                         <label for="horsepower">Horsepower</label>
                         <input type="text" class="form-control" name="horsepower" value="{{ old('horsepower') }}" id="horsepower" placeholder="Horsepower">

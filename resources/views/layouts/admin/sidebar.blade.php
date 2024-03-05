@@ -63,12 +63,6 @@
                   <p>Create New Listing</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="{{ route('edit', 1) }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Edit Listing</p>
-                </a>
-              </li>
             </ul>
           </li>
           <li class="nav-item">

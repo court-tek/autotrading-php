@@ -22,7 +22,9 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view("admin/listings/index");
+        $listings = Listing::all();
+
+        return view("admin/listings/index", ["listings" => $listings]);
     }
     
     /**
@@ -38,6 +40,20 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        // Validations
+        request()->validate([
+            'title' => 'required',
+            'vin_number' => 'required',
+            'mileage' => 'required',
+            'transmission' => 'required',
+            'fuel' => 'reuired',
+            'color' => 'required',
+            'driveline' => 'required',
+            'type' => 'required',
+            'interior' => 'required',
+            'mpg' => 'required'
+        ]);
+
         $listing = new Listing;
 
         $listing->title = $request->title;
@@ -66,7 +82,9 @@ class AdminController extends Controller
         $listing->slug = Helper::slugify("{$request->make}-{$request->model}-{$request->city}-{$request->state}");
         $listing->save();
 
-        return "Success";
+        session()->flash('success', 'Created New Auto Listing Successfully');
+
+        return redirect("/admin/listings/{$listing->slug}/{$listing->id}/edit");
     }
 
     /**
@@ -80,9 +98,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(string $slug, $id)
     {
-        return view("admin/listings/edit");
+        $listing = Listing::where(['is' => $id, 'slug' => $slug])->first();
+        return view("admin/listings/edit", ['listing' => $listing]);
     }
 
     /**

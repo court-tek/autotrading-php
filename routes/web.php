@@ -30,7 +30,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     // // Article routes
     Route::get('listings', [AdminController::class, 'index'])->name('all');
     Route::get('listings/create', [AdminController::class, 'create'])->name('create');
-    Route::get('listings/{id}/edit', [AdminController::class, 'edit'])->name('edit');
+    Route::get('listings/{slug}/{id}/edit', [AdminController::class, 'edit'])->name('edit');
     Route::post('/listings', [AdminController::class, 'store'])->name('listing');
     // Route::get('articles-edit/{id}', 'ArticleController@edit')->middleware(['auth', 'is_admin'])->name('articles.edit');
     // Route::patch('/articles/{id}', [ArticleController::class, 'update'])->name('articles.update');
