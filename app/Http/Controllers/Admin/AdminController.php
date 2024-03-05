@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Listing;
+use App\Helper\Helper;
 
 class AdminController extends Controller
 {
@@ -37,8 +38,35 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // $listing = new Listing();
-        return $request;
+        $listing = new Listing;
+
+        $listing->title = $request->title;
+        $listing->vin_number = $request->vin_number;
+        $listing->model = $request->model;
+        $listing->make = $request->make;
+        $listing->fuel_type = $request->fuel_type;
+        $listing->color = $request->color;
+        $listing->body_type = $request->body_type;
+        $listing->driveline = $request->driveline;
+        $listing->mileage = $request->mileage;
+        $listing->type = $request->type;
+        $listing->transmission = $request->transmission;
+        $listing->interior = $request->interior;
+        $listing->engine = $request->engine;
+        $listing->mpg = $request->mpg;
+        $listing->wheel_type = $request->wheel_type;
+        $listing->horsepower = $request->horsepower;
+        $listing->year = $request->year;
+        $listing->options = $request->options;
+        $listing->price = $request->price;
+        $listing->city = $request->city;
+        $listing->state = $request->state;
+        $listing->description = $request->description;
+
+        $listing->slug = Helper::slugify("{$request->make}-{$request->model}-{$request->city}-{$request->state}");
+        $listing->save();
+
+        return "Success";
     }
 
     /**

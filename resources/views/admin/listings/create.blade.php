@@ -98,7 +98,7 @@
                       </div>
                       <div class="form-group">
                         <label for="model">Model</label>
-                        <input type="text" class="form-control" value="{{ old('model') }}" id="model" placeholder="Model">
+                        <input type="text" class="form-control" name="model" value="{{ old('model') }}" id="model" placeholder="Model">
                       </div>
                       <div class="form-group">
                         <label for="color">Color</label>
@@ -142,14 +142,12 @@
                   </div>
                 </div>
                 <!-- /.card-body -->
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
               </form>
             </div>
             <!-- /.card -->
-            
           </div>
         </div>
       </div><!--/. container-fluid -->
