@@ -147,6 +147,14 @@ class AdminController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $listing = Listing::find($id);
+
+        // $this->authorize('delete', $article);
+ 
+        $listing->delete();
+
+        session()->flash('success', 'Deleted The Auto Listing Successfully');
+
+        return redirect("/admin/listings");
     }
 }

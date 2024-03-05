@@ -10,6 +10,18 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
+            @if (session()->has('success'))
+              <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <i class="icon fas fa-check"></i> {{session('success')}}
+              </div>
+            @endif
+            @if (session()->has('error'))
+              <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> {{session('error')}}</h5>
+              </div>
+            @endif
             <h1 class="m-0">Show All Listings</h1>
           </div><!-- /.col -->
         </div><!-- /.row -->

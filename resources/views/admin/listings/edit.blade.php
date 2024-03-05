@@ -211,7 +211,8 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Save</button>
+                  <a href="{{ route('destroy', [$listing->id]) }}" type="submit" onclick="confirm('Are you sure you want to delete this listing?')" class="btn btn-danger">Delete</a>
                 </div>
               </form>
             </div>
