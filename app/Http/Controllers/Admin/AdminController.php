@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Listing;
+use App\Models\User;
 use App\Helper\Helper;
 
 class AdminController extends Controller
@@ -21,7 +22,6 @@ class AdminController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
         $listings = Listing::paginate(5);
 
         return view("admin/listings/index", ["listings" => $listings]);
@@ -56,6 +56,7 @@ class AdminController extends Controller
 
         $listing = new Listing;
 
+        $listing->user_id = auth()->user()->id;
         $listing->title = $request->title;
         $listing->vin_number = $request->vin_number;
         $listing->model = $request->model;
