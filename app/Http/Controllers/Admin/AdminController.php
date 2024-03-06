@@ -22,7 +22,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $listings = Listing::all();
+        $listings = Listing::paginate(5);
 
         return view("admin/listings/index", ["listings" => $listings]);
     }
