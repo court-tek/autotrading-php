@@ -22,7 +22,8 @@ class AdminController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-        $listings = Listing::paginate(5);
+    {
+        $listings = Listing::where('user_id', auth()->user()->id)->paginate(5);
 
         return view("admin/listings/index", ["listings" => $listings]);
     }
@@ -32,6 +33,7 @@ class AdminController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Listing::class);
         return view("admin/listings/create");
     }
 
@@ -40,6 +42,7 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('create', Listing::class);
         // Validations
         request()->validate([
             'title' => 'required',
@@ -102,6 +105,7 @@ class AdminController extends Controller
     public function edit(string $slug, $id)
     {
         $listing = Listing::where(['id' => $id, 'slug' => $slug])->first();
+        $this->authorize('update', $listing);
         return view("admin/listings/edit", ['listing' => $listing]);
     }
 
@@ -111,6 +115,8 @@ class AdminController extends Controller
     public function update(Request $request, string $slug,  string $id)
     {
         $listing = Listing::where(['id' => $id, 'slug' => $slug])->first();
+
+        $this->authorize('update', $listing);
 
         $listing->title = $request->title;
         $listing->vin_number = $request->vin_number;
@@ -150,7 +156,7 @@ class AdminController extends Controller
     {
         $listing = Listing::find($id);
 
-        // $this->authorize('delete', $article);
+        $this->authorize('delete', $listing);
  
         $listing->delete();
 

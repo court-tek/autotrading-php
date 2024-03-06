@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function() {
+Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth', 'is_admin']] ,function() {
     // Admin home page
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
     
@@ -34,7 +34,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::get('listings/{slug}/{id}/edit', [AdminController::class, 'edit'])->name('edit');
     Route::patch('/listings/{slug}/{id}', [AdminController::class, 'update'])->name('update');
     Route::get('/listings/{id}', [AdminController::class, 'destroy'])->name('destroy');
-    // Route::get('articles/{id}/status', [ArticleCont roller::class, 'status'])->name('photos.status');
 
     // // Photo routes
     // Route::get('photos/{id}', 'PhotosController@index')->middleware(['auth', 'is_admin'])->name('photos.index');
