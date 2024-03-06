@@ -34,8 +34,7 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
     Route::get('listings/{slug}/{id}/edit', [AdminController::class, 'edit'])->name('edit');
     Route::patch('/listings/{slug}/{id}', [AdminController::class, 'update'])->name('update');
     Route::get('/listings/{id}', [AdminController::class, 'destroy'])->name('destroy');
-    // Route::get('articles-edit/{id}', 'ArticleController@edit')->middleware(['auth', 'is_admin'])->name('articles.edit');
-    // Route::get('articles/{id}/status', [ArticleController::class, 'status'])->name('photos.status');
+    // Route::get('articles/{id}/status', [ArticleCont roller::class, 'status'])->name('photos.status');
 
     // // Photo routes
     // Route::get('photos/{id}', 'PhotosController@index')->middleware(['auth', 'is_admin'])->name('photos.index');
