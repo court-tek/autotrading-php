@@ -59,7 +59,7 @@
                       <th>Title</th>
                       <th>Vin</th>
                       <th>Price</th>
-                      <th>Color</th>
+                      <th>Status</th>
                       <th>Engine</th>
                       <th>Driveline</th>
                       <th>Horsepower</th>
@@ -74,7 +74,13 @@
                         </td>
                         <td>{{ $item->vin_number }}</td>
                         <td>${{ $item->price}}</td>
-                        <td>{{ $item->color }}</td>
+                        <td>
+                          @if ($item->status == "published")
+												    <a class="text-capitalize text-white badge badge-success p-2">{{ $item->status }}</a>
+                          @else
+                            <a class="text-capitalize text-white badge badge-primary p-2">{{ $item->status }}</span></a>
+                          @endif
+                        </td>
                         <td>{{ $item->engine }}</td>
                         <td>{{ $item->driveline }}</td>
                         <td>{{ $item->horsepower }}</td>

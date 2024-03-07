@@ -81,6 +81,7 @@ class AdminController extends Controller
         $listing->price = $request->price;
         $listing->city = $request->city;
         $listing->state = $request->state;
+        $listing->status = "draft";
         $listing->description = $request->description;
 
         $listing->slug = Helper::slugify("{$request->year}-{$request->make}-{$request->model}-{$request->city}-{$request->state}");
@@ -139,6 +140,7 @@ class AdminController extends Controller
         $listing->price = $request->price;
         $listing->city = $request->city;
         $listing->state = $request->state;
+        $listing->status = $request->status;
         $listing->description = $request->description;
         $listing->slug = $request->slug;
 
