@@ -28,7 +28,8 @@ class PhotoController extends Controller
 
         return view('admin/photos/index', [
             'photos' => $photos,
-            'id' => $id
+            'id' => $id,
+            'slug' => $slug
         ]);
     }
 
@@ -39,15 +40,39 @@ class PhotoController extends Controller
     {
         // $photo = $id;
 
-        return view('admin/photos/create');
+        return view('admin/photos/create', ['slug' => $slug, 'id' => $id]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, $slug, $id)
     {
-        //
+         // $this->authorize('create', Photo:class); 
+
+         request()->validate([
+            'image' => 'required|file|mimes:jpg,avif,png,webp'
+        ]);
+
+        $allPhotos = Photo::all();
+        $newName = time() . '-' . $request->file('image')->getClientOriginalName();
+        $size = $request->file('image')->getSize();
+        $request->file('image')->move(public_path('images'), $newName);
+        
+
+        $photo = new Photo;
+
+        // die(var_dump($article->user_id));
+        $photo->name = $newName;
+        $photo->size = $size;
+        $photo->user_id = auth()->user()->id;
+        $photo->listing_id = $id;
+        // $photo->featured = ($allPhotos->count() < 1 ) ? 1 : 0;
+        $photo->save();
+
+        session()->flash('success', "Added New Photo to id: {$id} Successfully");
+
+        return redirect("admin/{$slug}/{$id}/photos");
     }
 
     /**
@@ -77,8 +102,14 @@ class PhotoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(string $slug, string $id, string $photo_id)
     {
-        //
+        $listing = Photo::find($photo_id);
+
+        $listing->delete();
+
+        session()->flash('success', "Photo Has Been Deleted Successfully");
+
+        return redirect("admin/{$slug}/{$id}/photos");
     }
 }
