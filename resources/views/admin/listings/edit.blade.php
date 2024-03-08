@@ -202,7 +202,7 @@
                           <input type="text" class="form-control" name="slug" value="{{ old('slug', $listing->slug) }}" id="slug" placeholder="slug">
                         </div>
                       </div>
-                      <div class="col-md-6">
+                      <div class="col-md-12">
                         <div class="form-group">
                           <label for="description">Description</label>
                           <textarea class="form-control" name="description" rows="3" placeholder="Enter description...">{{ old('description', $listing->description) }}</textarea>
@@ -259,34 +259,25 @@
                           <div class="row">
                             <div class="col-md-12">
                               <nav class="mt-2">
-                                <ul class="nav nav-sidebar flex-column" role="menu" data-accordion="false">
+                                <ul class="nav nav-pills nav-sidebar flex-column" role="menu" data-accordion="false">
                                   <!-- Add icons to the links using the .nav-icon class
                                        with font-awesome or any other icon font library -->
                                   <li class="nav-item menu-open">
-                                    <a href="#" class="nav-link">
-                                      <i class="ti-gallery text-white"></i>
+                                    <a href="{{ route('photos.index', ['slug' => $listing->slug, 'id' => $listing->id]) }}" class="nav-link">
+                                      <i class="nav-icon ti-gallery text-white"></i>
                                       <p class="text-white">
                                         Images
                                       </p>
                                     </a>
                                   </li>
                                   <li class="nav-item menu-open">
-                                    <a href="#" class="nav-link">
-                                      <i class="ti-gallery text-white"></i>
+                                    <a href="{{ route('photos.index', ['slug' => $listing->slug, 'id' => $listing->id]) }}" class="nav-link">
+                                      <i class="nav-icon ti-gallery text-white"></i>
                                       <p class="text-white">
                                         Images
                                       </p>
                                     </a>
                                   </li>
-                                  <li class="nav-item menu-open">
-                                    <a href="#" class="nav-link">
-                                      <i class="ti-gallery text-white"></i>
-                                      <p class="text-white">
-                                        Images
-                                      </p>
-                                    </a>
-                                  </li>
-                            
                                 </ul>
                               </nav>
                             </div>

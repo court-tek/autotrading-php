@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,12 +37,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 
     Route::get('/listings/{id}', [AdminController::class, 'destroy'])->name('destroy');
 
     // // Photo routes
-    // Route::get('photos/{id}', 'PhotosController@index')->middleware(['auth', 'is_admin'])->name('photos.index');
-    // Route::get('photos-create/{id}', 'PhotosController@create')->middleware(['auth', 'is_admin'])->name('photos.create');
-    // Route::get('photos/{id}/edit/{photo_id}', 'PhotosController@edit')->middleware(['auth', 'is_admin'])->name('photos.edit');
-    // Route::post('photos/{id}', [PhotosController::class, 'store'])->name('photos.store');
-    // Route::get('photos/{id}/featured/{photo_id}', [PhotosController::class, 'featured'])->name('photos.featured');
-    // Route::get('/photos/{id}/delete/{photo_id}', [PhotosController::class, 'destroy'])->name('photos.destroy');
+    Route::get('{slug}/{id}/photos', [PhotoController::class, 'index'])->name('photos.index');
+    Route::get('{slug}/{id}/photos/create', [PhotoController::class, 'create'])->name('photo.create');
+    Route::get('{slug}/{id}/photos/{photo_id}/edit', [PhotoController::class, 'edit'])->name('photo.edit');
+    Route::post('{slug}/{id}/photos', [PhotoController::class, 'store'])->name('photo.store');
+    Route::patch('{slug}/{id}/photos/{photo_id}/update', [PhotoController::class, 'update'])->name('photo.update');
+    Route::get('{slug}/{id}/photos/{photo_id}/delete', [PhotoController::class, 'destroy'])->name('photo.destroy');
 }); 
 
 Route::namespace('App\Http\Controllers\Front')->group(function() {
