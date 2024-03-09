@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PhotoController;
+use App\Http\Controllers\Front\WelcomeController;
+use App\Http\Controllers\Front\ListingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,19 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth', 'is_admin']] ,function() {
+Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 'middleware' => ['auth', 'is_admin']], function() {
     // Admin home page
     Route::get('/dashboard', [AdminController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
     
-    // // Article routes
+    // // Admin listing routes
     Route::get('listings', [AdminController::class, 'index'])->name('all');
     Route::get('listings/create', [AdminController::class, 'create'])->name('create');
     Route::post('/listings', [AdminController::class, 'store'])->name('listing');
@@ -45,17 +43,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 
     Route::get('{slug}/{id}/photos/{photo_id}/delete', [PhotoController::class, 'destroy'])->name('photo.destroy');
 }); 
 
-Route::namespace('App\Http\Controllers\Front')->group(function() {
+Route::group(['namespace' => 'App\Http\Controllers\Front'], function() {
     // welcome page
-    Route::get('/', 'welcomeController@index');
+    Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
-    // Main marketplace Routes
-    Route::get('/listings/{id}/{slug}', 'listingsController@show');
+    // index page
+    Route::get('/listings', [ListingController::class, 'index'])->name('front.index');
+    
+    // show page 
+    Route::get('/listings/{slug}/{id}', [ListingController::class, 'show'])->name('front.show');
+
     // Route::get('/listings/{model}/{id}', 'listingsController@index');
     Route::get('/listings/{model}', 'listingsController@index');
 
     // account routes
-    Route::get('/account/saved', 'listingsController@save');
+    Route::get('/accounts/saved', 'listingsController@save');
 });
 
 Route::middleware('auth')->group(function () {

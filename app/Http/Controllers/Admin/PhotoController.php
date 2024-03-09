@@ -20,7 +20,7 @@ class PhotoController extends Controller
         $photos = Photo::where([
             'user_id' => auth()->user()->id,
             'listing_id' => $id
-        ])->paginate(5);
+        ])->paginate(8);
         
         if($photos->total() < 1) {
             return redirect("admin/{$slug}/{$id}/photos/create");

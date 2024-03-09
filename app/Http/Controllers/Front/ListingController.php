@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Models\Listing;
+use App\Models\Photo;
 use Illuminate\Http\Request;
 
-class listingsController extends Controller
+class ListingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -43,22 +45,20 @@ class listingsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(string $slug, string $id)
     {
-        $car = [
-            "title" => "2019 acura nsx",
-            "thumbnails" => [
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx1.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx2.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx3.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx4.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx5.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx6.jpeg",
-                "https://raw.githubusercontent.com/court-tek/autotrading-php/main/public/images/acura_nsx7.jpg",
-            ]
-        ];
-
-        return view("front/show", ["car" => $car]);
+        $listing = Listing::where([
+            'id' => $id,
+            'slug' => $slug
+        ])->first();
+        $photos = Photo::where([
+            'listing_id' => $id
+        ])->get();
+        
+        return view('front/show', [
+            'listing' => $listing,
+            'photos' => $photos
+        ]);
     }
 
     /**
