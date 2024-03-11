@@ -49,6 +49,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Front'], function() {
 
     // index page
     Route::get('/listings', [ListingController::class, 'index'])->name('front.index');
+
+    // index page
+    Route::get('/listings/{slug}/{id}/api', [ListingController::class, 'api']);
     
     // show page 
     Route::get('/listings/{slug}/{id}', [ListingController::class, 'show'])->name('front.show');

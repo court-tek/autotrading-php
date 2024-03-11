@@ -51,14 +51,32 @@ class ListingController extends Controller
             'id' => $id,
             'slug' => $slug
         ])->first();
+
         $photos = Photo::where([
             'listing_id' => $id
         ])->get();
         
+        $photosJSON = $photos->toJson();
+        // return $photosJSON;
         return view('front/show', [
             'listing' => $listing,
-            'photos' => $photos
+            'photos' => $photos,
+            'photosJSON' => $photosJSON,
+            'slug' => $slug,
+            'id' => $id
         ]);
+    }
+
+    /**
+     * Display the specified resource.
+     */
+    public function api(string $id)
+    {
+        $photos = Photo::where([
+            'listing_id' => $id
+        ])->get();
+        
+        return $photos;
     }
 
     /**

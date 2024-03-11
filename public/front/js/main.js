@@ -19,13 +19,75 @@ window.onload = () => {
 
 	// account drop menu 
 	let accountMenu = document.getElementsByClassName('account-dropdown')[0];
+	
+	// show page current image
+	let currentImage = document.getElementsByClassName('listing__image-slider')[0];
+	
+	// show page change image to the left
+	let nextBtn = document.getElementsByClassName('arrow-left')[0];
 
-	// function y loops
+	// show page change image to the right
+	let prevBtn = document.getElementsByClassName('arrow-right')[0];
+
+	// show page small thumbnail image
+	let thumbImage = document.getElementsByClassName('listing__thumb-image')[0];
+
+	// show page small thumbnail image
+	let thumbImageContainer = document.getElementsByClassName('listing__thumbnails')[0];
+	
+	let slug = thumbImage.getAttribute('slug')
+	let id = thumbImage.getAttribute('id');
+	let photosJson = thumbImage.getAttribute('json');
+	// console.log(photosJson);
+	// show page thumbnail testing dir
+	console.dir(thumbImageContainer);
+
+	// arrowLeft.addEventListener('click', function() {
+	// 	console.log('you clicked to the left');
+	// });
+
+	
+	// ------------------------------------------------------------------
+	
+	// function y loops -------------------------------------------------
 	for (let i = 0; i < accordions.length; i++) {
 		accordions[i].addEventListener('click', function() {
 			this.classList.toggle('active');
 		})
 	}
+	
+	// ------------------------------------------------------------------
+
+	// show page image slide
+	// fetch 
+	fetch(`http://127.0.0.1:8000/api/v1/photos/${id}`).then((response) => {
+		return response.json();
+	})
+	.then((data) => {
+		console.log(data.length);
+		let curImg = 0;
+		let arrLength = data.length;
+
+		currentImage.attributes.style.value = `background-image: url("http://localhost:8000/images/${data[curImg].name}")`
+		
+		nextBtn.addEventListener('click', () => {
+			if (curImg != arrLength - 1) {
+				curImg+=1;
+			}
+			currentImage.attributes.style.value = `background-image: url("http://localhost:8000/images/${data[curImg].name}")`
+		});
+
+		prevBtn.addEventListener('click', () => {
+			if (curImg != 0) {
+				curImg-=1;
+			}
+			currentImage.attributes.style.value = `background-image: url("http://localhost:8000/images/${data[curImg].name}")`
+		});
+
+		thumbImage.addEventListener('click', () => {
+
+		});
+	});
 
 	// ------------------------------------------------------------------
 
@@ -49,6 +111,12 @@ window.onload = () => {
 	closeButton.addEventListener('click', () => {
 		mobileMenu.classList.remove('mobile-menu--open');
 	});
+
+	// ------------------------------------------------------------------
+
+	
+
+
 
 
 

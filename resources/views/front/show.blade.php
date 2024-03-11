@@ -1,4 +1,3 @@
-<!-- resources/views/child.blade.php -->
 @extends('layouts.front.app')
  
 @section('title', 'Realestate App')
@@ -42,20 +41,20 @@
                     <div class="listing__gallery">
                         <div class="listing__slider">
                             <div class="listing__main-image">
-                                <div class="listing__arrow"><i class="ti-angle-left"></i></div>
-                                <div class="listing__arrow"><i class="ti-angle-right"></i></div>
-                                <div class="listing__image-1" style='background-image: url("{{ url("/images/1709938036-mazda_rx7_1.jpeg") }}")'></div>
+                                <div class="listing__arrow arrow-left"><i class="ti-angle-left"></i></div>
+                                <div class="listing__arrow arrow-right"><i class="ti-angle-right"></i></div>
+                                <div class="listing__image-slider" style=""></div>
                             </div>
                         </div>
                         <div class="listing__thumbnails">
                             @foreach ($photos as $thumbnail)
-                                <div class="listing__thumb-image" style="background-image: url('{{ url("/images/$thumbnail") }}')"></div>
+                                <div class="listing__thumb-image" slug="{{ $slug }}" id="{{ $id }}" style="background-image: url('{{ url("/images/$thumbnail->name") }}')"></div>
                             @endforeach
                         </div>
                     </div>
                 </div>
                 <div class="listing__details-column">
-                    <div class="listing__condition">Used</div>
+                    <div class="listing__condition">{{ $listing->condition }}</div>
                     <h3 class="listing__title">{{ $listing->title }}</h3>
                     <h4 class="listing__price">${{ $listing->price }}</h4>
                     <h4 class="listing__status"><i class="fas fa-fire"></i> Hot Car – this car is popular and expected to sell soon.</h4>
