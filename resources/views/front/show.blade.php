@@ -48,7 +48,7 @@
                         </div>
                         <div class="listing__thumbnails">
                             @foreach ($photos as $thumbnail)
-                                <div class="listing__thumb-image" slug="{{ $slug }}" id="{{ $id }}" style="background-image: url('{{ url("/images/$thumbnail->name") }}')"></div>
+                                <div class="listing__thumb-image" id="{{ $id }}" style="background-image: url('{{ url("/images/$thumbnail->name") }}')"></div>
                             @endforeach
                         </div>
                     </div>

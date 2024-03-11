@@ -35,17 +35,9 @@ window.onload = () => {
 	// show page small thumbnail image
 	let thumbImageContainer = document.getElementsByClassName('listing__thumbnails')[0];
 	
-	let slug = thumbImage.getAttribute('slug')
 	let id = thumbImage.getAttribute('id');
-	let photosJson = thumbImage.getAttribute('json');
-	// console.log(photosJson);
-	// show page thumbnail testing dir
-	console.dir(thumbImageContainer);
-
-	// arrowLeft.addEventListener('click', function() {
-	// 	console.log('you clicked to the left');
-	// });
-
+	// console.dir(thumbImageContainer);
+	console.log(thumbImageContainer.children);
 	
 	// ------------------------------------------------------------------
 	
@@ -67,7 +59,7 @@ window.onload = () => {
 		console.log(data.length);
 		let curImg = 0;
 		let arrLength = data.length;
-
+		
 		currentImage.attributes.style.value = `background-image: url("http://localhost:8000/images/${data[curImg].name}")`
 		
 		nextBtn.addEventListener('click', () => {
@@ -84,9 +76,13 @@ window.onload = () => {
 			currentImage.attributes.style.value = `background-image: url("http://localhost:8000/images/${data[curImg].name}")`
 		});
 
-		thumbImage.addEventListener('click', () => {
-
-		});
+		for (let i = 0; i < thumbImageContainer.children.length; i++) {
+			thumbImageContainer.children[i].addEventListener('click', function() {
+				console.log(i)
+				curImg = i;
+				currentImage.attributes.style.value = `background-image: url("http://localhost:8000/images/${data[curImg].name}")`
+			});
+		}
 	});
 
 	// ------------------------------------------------------------------
@@ -114,15 +110,6 @@ window.onload = () => {
 
 	// ------------------------------------------------------------------
 
-	
-
-
-
-
-
-
-
-	
 	// // mobile slide menu
 	// let hamburgerBtn = document.getElementsByClassName('navbar-toggler')[0];
 
