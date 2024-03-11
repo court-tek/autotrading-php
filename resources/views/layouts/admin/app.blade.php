@@ -13,8 +13,10 @@
   <link rel="stylesheet" href="{{url("admin/css/themify-icons.css")}}">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="{{url("admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css")}}">
-  <!-- Theme style -->
+  {{-- <!-- Theme style --> --}}
   <link rel="stylesheet" href="{{url("admin/css/adminlte.min.css")}}">
+  {{-- <!-- Vite style --> --}}
+  @vite(['resources/css/app.css', 'resources/js/app.js',  'resources/js/main.js'])
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">

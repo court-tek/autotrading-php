@@ -18,6 +18,8 @@
         <!-- CSS -->
         <link href="{{ url("front/css/main.css") }}" rel="stylesheet" />
 
+        {{-- <!-- Vite style --> --}}
+        @vite(['resources/css/app.css', 'resources/js/app.js',  'resources/js/main.js'])
     </head>
     <body class="antialiased">
 
@@ -27,6 +29,6 @@
 
         @include('layouts.front.footer')
 
-        <script src="{{url("front/js/main.js")}}"></script>
+        {{-- <script src="{{url("front/js/main.js")}}"></script> --}}
     </body>
 </html>

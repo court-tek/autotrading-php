@@ -11,23 +11,29 @@
         width: 100vw;
     }
     
-    .hero .hero__images {
+    .hero__images {
         display: flex;
-        height: calc(100vh - 150px);
+        position: relative;
+        height: calc(100vh - 100px);
+        overflow: hidden;
         transition: all .3s ease-in-out;
     }
 
-    .hero .hero__images:hover { 
-        transform: translate3d(-100%, 0, 0);
-    }
-
-    .hero__images .hero__image {
+   .hero__images .hero__image {
         position: relative;
-        overflow: hidden;
+        /* display: none; */
         flex-shrink: 0;
         width: 100%;
         /* object-fit: cover; */
         /* object-position: center; */
+    }
+
+   .hero__image--active { 
+        /* display: block; */
+    }
+
+    .hero__slider--active{
+        transform: translate3d(-100%, 0, 0);
     }
 
     .hero__image .hero__info {
