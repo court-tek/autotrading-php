@@ -116,6 +116,13 @@
                           <option value="NY" @selected( old('state') == 'NY')>New York</option>
                         </select>
                       </div>
+                      <div class="form-group">
+                        <label for="featured">Featured Listing</label>
+                        <select name="featured" class="form-control select2" style="width: 100%;">
+                          <option  selected="selected" value="0" @selected( old('featured') == '0')>Non Featured</option>
+                          <option  value="1" @selected( old('featured') == '0')>Featured</option>
+                        </select>
+                      </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">

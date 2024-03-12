@@ -41,6 +41,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'App\Http\Controllers\Admin', 
     Route::post('{slug}/{id}/photos', [PhotoController::class, 'store'])->name('photo.store');
     Route::patch('{slug}/{id}/photos/{photo_id}/update', [PhotoController::class, 'update'])->name('photo.update');
     Route::get('{slug}/{id}/photos/{photo_id}/delete', [PhotoController::class, 'destroy'])->name('photo.destroy');
+    Route::get('{slug}/{id}/photos/{photo_id}/featured', [PhotoController::class, 'featured'])->name('photo.featured');
 }); 
 
 Route::group(['namespace' => 'App\Http\Controllers\Front'], function() {

@@ -63,6 +63,7 @@ class AdminController extends Controller
         $listing->title = $request->title;
         $listing->vin_number = $request->vin_number;
         $listing->model = $request->model;
+        $listing->condition = "used";
         $listing->make = $request->make;
         $listing->fuel_type = $request->fuel_type;
         $listing->color = $request->color;
@@ -75,6 +76,7 @@ class AdminController extends Controller
         $listing->engine = $request->engine;
         $listing->mpg = $request->mpg;
         $listing->wheel_type = $request->wheel_type;
+        $listing->featured = $request->featured;
         $listing->horsepower = $request->horsepower;
         $listing->year = $request->year;
         $listing->options = $request->options;
@@ -138,6 +140,7 @@ class AdminController extends Controller
         $listing->year = $request->year;
         $listing->options = $request->options;
         $listing->price = $request->price;
+        $listing->featured = $request->featured;
         $listing->city = $request->city;
         $listing->state = $request->state;
         $listing->status = $request->status;

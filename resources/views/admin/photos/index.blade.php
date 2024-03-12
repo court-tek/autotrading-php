@@ -28,25 +28,29 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <div class="row">
-            <div class="col-12">
-                <div class="card card-primary">
-                  <div class="card-header">
-                    <h4 class="card-title">Photos for: {{ $slug }}</h4>
-                  </div>
-                  <div class="card-body">
-                    <div class="row">
-                      @foreach ($photos as $item)
+          <div class="col-12">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h4 class="card-title">Photos for: {{ $slug }}</h4>
+              </div>
+              <div class="card-body">
+                <div class="row">
+                  @foreach ($photos as $item)
                         <div class="card col-sm-3" style="width: 18rem;">
                           <img src="/images/{{$item->name}}" class="card-img-top" alt="">
                           <div class="card-body">
                             <h5>{{ $item->name }}</h5>
                             <h5>{{ $item->id }}</h5>
                             <a href="{{ route("photo.destroy", ["slug" => $slug, "id" => $id, "photo_id" => $item->id]) }}" onclick="return confirm('Are you sure you want to delete this listing photo?')" class="text-danger"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to delete image"><i class="far fa-trash-alt" style="font-size: 20px"></i></a>
+                            @if ($item->featured == 1)
+                              <a href="{{ route("photo.featured", ["slug" => $slug, "id" => $id, "photo_id" => $item->id]) }}" class="text-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to make featured image"><i class="ti-star" style="font-size: 20px"></i></a>                                
+                            @else
+                              <a href="{{ route("photo.featured", ["slug" => $slug, "id" => $id, "photo_id" => $item->id]) }}" class="text-white" data-toggle="tooltip" data-placement="top" title="" data-original-title="Click to make featured image"><i class="ti-star" style="font-size: 20px"></i></a>                                  
+                            @endif
                           </div>
                         </div>
                       @endforeach

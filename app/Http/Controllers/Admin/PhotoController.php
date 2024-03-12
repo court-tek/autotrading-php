@@ -55,6 +55,11 @@ class PhotoController extends Controller
         ]);
 
         $allPhotos = Photo::all();
+        $yaFeatured = Photo::where([
+            'listing_id' => $id,
+            'featured' => 1
+        ])->first();
+        
         $newName = time() . '-' . $request->file('image')->getClientOriginalName();
         $size = $request->file('image')->getSize();
         $request->file('image')->move(public_path('images'), $newName);
@@ -66,6 +71,11 @@ class PhotoController extends Controller
         $photo->name = $newName;
         $photo->size = $size;
         $photo->user_id = auth()->user()->id;
+        if ($yaFeatured) {
+            $photo->featured = 0;
+        } else {
+            $photo->featured = 1;
+        }
         $photo->listing_id = $id;
         // $photo->featured = ($allPhotos->count() < 1 ) ? 1 : 0;
         $photo->save();
@@ -98,6 +108,36 @@ class PhotoController extends Controller
     {
         //
     }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function featured($slug, $id, $photo_id)
+    {
+  
+        $old_photo = Photo::where([
+            'listing_id' => $id,
+            'featured' => 1
+        ])->first();
+
+        $old_photo->featured = 0;
+        
+        $old_photo->save();
+
+        $new_photo = Photo::where([
+            'listing_id' => $id,
+                'id' => $photo_id
+            ])->first();
+    
+        $new_photo->featured = 1;
+    
+        $new_photo->save();
+
+        session()->flash('success', 'This photo is now the featured');
+
+        return redirect("/admin/{$slug}/{$id}/photos");
+    }
+
 
     /**
      * Remove the specified resource from storage.
