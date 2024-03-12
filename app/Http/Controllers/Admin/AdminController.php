@@ -54,7 +54,8 @@ class AdminController extends Controller
             'driveline' => 'required',
             'type' => 'required',
             'interior' => 'required',
-            'mpg' => 'required'
+            'mpg' => 'required',
+            'condition' => 'required'
         ]);
 
         $listing = new Listing;
@@ -81,6 +82,7 @@ class AdminController extends Controller
         $listing->year = $request->year;
         $listing->options = $request->options;
         $listing->price = $request->price;
+        $listing->condition = $request->condition;
         $listing->city = $request->city;
         $listing->state = $request->state;
         $listing->status = "draft";

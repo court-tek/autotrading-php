@@ -102,21 +102,6 @@
                         <input type="text" class="form-control" name="price" value="{{ old('price') }}" id="price" placeholder="Price">
                       </div>
                       <div class="form-group">
-                        <label for="state">State</label>
-                        <select name="state" class="form-control select2" style="width: 100%;">
-                          <option selected="selected">Alabama</option>
-                          <option value="AK" @selected( old('state') == 'AK')>Alaska</option>
-                          <option value="CA" @selected( old('state') == 'CA')>California</option>
-                          <option value="DE" @selected( old('state') == 'DE')>Delaware</option>
-                          <option value="TN" @selected( old('state') == 'TN')>Tennessee</option>
-                          <option value="TX" @selected( old('state') == 'TX')>Texas</option>
-                          <option value="WA" @selected( old('state') == 'WA')>Washington</option>
-                          <option value="FL" @selected( old('state') == 'FL')>Florida</option>
-                          <option value="VA" @selected( old('state') == 'VA')>Virginia</option>
-                          <option value="NY" @selected( old('state') == 'NY')>New York</option>
-                        </select>
-                      </div>
-                      <div class="form-group">
                         <label for="featured">Featured Listing</label>
                         <select name="featured" class="form-control select2" style="width: 100%;">
                           <option  selected="selected" value="0" @selected( old('featured') == '0')>Non Featured</option>
@@ -187,11 +172,42 @@
                         <input type="text" class="form-control" name="options" value="{{ old('options') }}" id="options" placeholder="Alloy wheels, Bluetooth, Headted Seats, Navigation System etc..">
                       </div>
                       <div class="form-group">
+                        <label for="state">State</label>
+                        <select name="state" class="form-control select2" style="width: 100%;">
+                          <option selected="selected">Alabama</option>
+                          <option value="AK" @selected( old('state') == 'AK')>Alaska</option>
+                          <option value="CA" @selected( old('state') == 'CA')>California</option>
+                          <option value="DE" @selected( old('state') == 'DE')>Delaware</option>
+                          <option value="TN" @selected( old('state') == 'TN')>Tennessee</option>
+                          <option value="TX" @selected( old('state') == 'TX')>Texas</option>
+                          <option value="WA" @selected( old('state') == 'WA')>Washington</option>
+                          <option value="FL" @selected( old('state') == 'FL')>Florida</option>
+                          <option value="VA" @selected( old('state') == 'VA')>Virginia</option>
+                          <option value="NY" @selected( old('state') == 'NY')>New York</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
                         <label for="city">City</label>
                         <input type="text" class="form-control" name="city" value="{{ old('city') }}" id="city" placeholder="City">
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label for="condition">Condition</label>
+                        <select name="condition" class="form-control select2" style="width: 100%;">
+                          <option selected="selected">Choose condition</option>
+                          <option value="new" @selected( old('condition') == 'new')>New</option>
+                          <option value="used" @selected( old('condition') == 'used')>Used</option>
+                          <option value="certified" @selected( old('condition') == 'certified')>Ceertified Pre-owned</option>
+                        </select>
+                      </div>
+                      @error('condition')
+                        <div class="error-sub-text">
+                             {{ $message }}
+                        </div>    
+                      @enderror
+                    </div>
+                    <div class="col-md-12">
                       <div class="form-group">
                         <label for="description">Description</label>
                         <textarea class="form-control" name="description" rows="3" placeholder="Enter description...">{{ old('description') }}</textarea>
