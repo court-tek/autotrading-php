@@ -45,6 +45,19 @@ class ListingController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function welcome(string $id)
+    {
+        $photos = Photo::where([
+            'listing_id' => $id,
+            'featured' => 1
+        ])->get();
+        
+        return $photos;
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)

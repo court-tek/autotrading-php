@@ -1,4 +1,4 @@
-export function showPageSlider() {
+export default function navigation() {
     // *************************************************
     // Show Page slider, located on the show page
     // *************************************************

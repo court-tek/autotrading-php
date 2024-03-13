@@ -204,6 +204,27 @@
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
+                          <label for="featured">Featured Listing</label>
+                          <select name="featured" class="form-control select2" style="width: 100%;">
+                            <option  value="0" @selected( old('featured', $listing->featured) == '0')>Non Featured</option>
+                            <option  value="1" @selected( old('featured', $listing->featured) == '1')>Featured</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="condition">Condition</label>
+                          <select name="condition" class="form-control select2" style="width: 100%;">
+                            <option selected="selected">Choose condition</option>
+                            <option value="new" @selected( old('condition', $listing->condition) == 'new')>New</option>
+                            <option value="used" @selected( old('condition', $listing->condition) == 'used')>Used</option>
+                            <option value="certified" @selected( old('condition', $listing->condition) == 'certified')>Ceertified Pre-owned</option>
+                          </select>
+                        </div>
+                        @error('condition')
+                          <div class="error-sub-text">
+                               {{ $message }}
+                          </div>    
+                        @enderror
+                        <div class="form-group">
                           <label for="description">Description</label>
                           <textarea class="form-control" name="description" rows="3" placeholder="Enter description...">{{ old('description', $listing->description) }}</textarea>
                         </div>

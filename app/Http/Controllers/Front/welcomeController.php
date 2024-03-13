@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Listing;
+use App\Models\Photo;
+use Illuminate\Support\Facades\DB;
 
 class WelcomeController extends Controller
 {
@@ -13,8 +16,16 @@ class WelcomeController extends Controller
     public function index()
     {
         $models = ['Nissan Silvia', 'Skyline R34', 'Mazda 3', 'Mazda RX7', 'Toyota Chaser', 'Subaru WRX', 'Subaru WRX STI', 'Ford Mustang', 'Ford Bronco'];
+        $featured = Listing::all()->where('featured', 1);
+        // $featured->id;
+        // return $featured;
+        $photos = Photo::all()->where('featured', 1);
 
-        return view("welcome", ["models" => $models]);
+        return view("welcome", [
+            "models" => $models,
+            "featured" => $featured,
+            'photos' => $photos
+        ]);
     }
 
     /**

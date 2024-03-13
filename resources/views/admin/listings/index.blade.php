@@ -59,6 +59,7 @@
                       <th>Title</th>
                       <th>Vin</th>
                       <th>Price</th>
+                      <th>Featured</th>
                       <th>Status</th>
                       <th>Engine</th>
                       <th>Driveline</th>
@@ -74,6 +75,12 @@
                         </td>
                         <td>{{ $item->vin_number }}</td>
                         <td>${{ $item->price}}</td>
+                        <td>
+                          @if ($item->featured == 1)
+												    <a class="text-capitalize text-white badge badge-success p-2">Featured</a>
+                          @else
+                            <a class="text-capitalize text-white badge badge-primary p-2">No</span></a>
+                          @endif
                         <td>
                           @if ($item->status == "published")
 												    <a class="text-capitalize text-white badge badge-success p-2">{{ $item->status }}</a>

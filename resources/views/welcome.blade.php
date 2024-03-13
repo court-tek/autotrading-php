@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>App Name - JDM Autotrader</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -235,52 +235,27 @@
                 <div class="mobile-menu__item">Help</div>
             </div>
         </section>
-
+        
         {{-- content --}}
         <section class="hero">
             <div class="hero__images">
-                <div class="hero__image hero__image--active" attr="1">
-                    <img src="{{ url("images/nissan_silvia14_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
-                    <div class="hero__info">
-                        <div class="hero__subtitle">
-                            Used
-                        </div>
-                        <div class="hero__title">
-                           1995 Nissan Silvia
-                        </div>
-                        <div class="hero__info-link">
-                            See Listing
-                        </div>
+                @foreach ($featured as $item)
+                    <div class="hero__image" attr="1">
+                        <img src="" id="{{ $item->id }}" alt="{{ $item->title }}" class="hero__image-element">
+                        <div class="hero__info">
+                            <div class="hero__subtitle">
+                                {{ $item->condition }}
+                                {{ $item->id}}
+                            </div>
+                            <div class="hero__title">
+                               {{ $item->title }}
+                            </div>
+                            <div class="hero__info-link">
+                                <a href="{{ route('front.show', ['slug' => $item->slug, 'id' => $item->id]) }}">See Listing</a>
+                            </div>
+                        </div> 
                     </div>
-                </div>
-                <div class="hero__image" attr="2">
-                    <img src="{{ url("images/acura_nsx7.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
-                    <div class="hero__info">
-                        <div class="hero__subtitle">
-                            Certified
-                        </div>
-                        <div class="hero__title">
-                           2017 Honda NSX
-                        </div>
-                        <div class="hero__info-link">
-                            See Listing
-                        </div>
-                    </div>
-                </div>
-                <div class="hero__image" attr="3">
-                    <img src="{{ url("images/toyota_supra1_big.jpg") }}" alt="1996 nissan silvia s14" class="hero__image">
-                    <div class="hero__info">
-                        <div class="hero__subtitle">
-                            Used
-                        </div>
-                        <div class="hero__title">
-                           1996 Toyota Supra
-                        </div>
-                        <div class="hero__info-link">
-                            See Listing
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
             
             <div class="hero__indicator">
