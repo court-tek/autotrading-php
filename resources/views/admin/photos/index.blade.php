@@ -59,6 +59,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
+                  {{ $photos->links() }}
                   <a href="{{ route("photo.create", ['slug'=> $slug, 'id' => $id]) }}" type="submit" class="btn btn-primary">Add An Image</a>
                 </div>
               </div>
