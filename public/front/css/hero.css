@@ -61,9 +61,19 @@
     }
 
     .hero__info .hero__info-link {
-        font-size: 1.3rem;
+        font-size: 1.3rem;   
+    }
+    
+    .hero__info-link a {
         color: var(--blanco);
-        cursor: pointer;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all .3s ease-in-out;
+        
+    }
+
+    .hero__info-link a:hover {
+        color: var(--themecolor1);
     }
 
     .hero .hero__indicator {

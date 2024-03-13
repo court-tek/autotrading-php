@@ -13,7 +13,19 @@
           <img src="{{url("admin/images/user2-160x160.jpg")}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">
+            @if (Route::has('login'))
+              @auth
+                <span class="navigation__user-greeting">
+                    Hi, {{ auth()->user()->name }}
+                </span>
+              {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
+              @else
+                <span class="navigation__user-greeting">
+                </span>
+              @endauth
+            @endif
+          </a>
         </div>
       </div>
 
