@@ -69,7 +69,7 @@
                       @enderror
                       <div class="form-group">
                         <label for="mileage">Mileage</label>
-                        <input type="text" class="form-control" name="mileage" value="{{ old('mileage') }}" id="mileage" placeholder="Mileage">
+                        <input type="number" class="form-control" name="mileage" value="{{ old('mileage') }}" id="mileage" placeholder="Mileage">
                       </div>
                       @error('mileage')
                         <div class="error-sub-text">
@@ -95,11 +95,11 @@
                       </div>
                       <div class="form-group">
                         <label for="year">Year</label>
-                        <input type="text" class="form-control" name="year" value="{{ old('year') }}" id="year" placeholder="Year">
+                        <input type="number" class="form-control" name="year" value="{{ old('year') }}" id="year" placeholder="Year">
                       </div>
                       <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="text" class="form-control" name="price" value="{{ old('price') }}" id="price" placeholder="Price">
+                        <input type="number" class="form-control" name="price" value="{{ old('price') }}" id="price" placeholder="Price">
                       </div>
                       <div class="form-group">
                         <label for="featured">Featured Listing</label>

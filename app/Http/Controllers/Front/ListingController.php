@@ -6,24 +6,80 @@ use App\Http\Controllers\Controller;
 use App\Models\Listing;
 use App\Models\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ListingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request, $body_type = null, $make = null,  $model = null, $state = null, $city = null)
     {
-        $cars = [
-            "wrx" => "subaru",
-            "wrx sti" => "subaru",
-            "chaser" => "toyota",
-            "silvia" => "nissan",
-            "rx7" => "mazda",
-            "skyline r34" => "nissan"
+        // return $request->input('min_price');
+        $min_price = (is_null($request->input('min_price'))) ? 0 : $request->input('min_price');
+        $max_price = (is_null($request->input('max_price'))) ? 1000000 : $request->input('max_price');
+        $min_mileage = (is_null($request->input('min_mileage'))) ? 0 : $request->input('min_mileage');
+        $max_mileage = (is_null($request->input('max_mileage'))) ? 400000 : $request->input('max_mileage');
+        $min_year = (is_null($request->input('min_year'))) ? 0 : $request->input('min_year');
+        $max_year = (is_null($request->input('max_year'))) ? 2024 : $request->input('max_year');
+        
+        $filters = [
+            'body_type' => $body_type,
+            'make' => $make,
+            'model' => $model,
+            'state' => $state,
+            'city' => $city
         ];
 
-        return view("front/index", ["cars" => $cars]);
+        $listings = DB::table('listings')->where(function($query) use($filters) {
+            foreach ($filters as $column => $value) {
+                if (!is_null($value)) {
+                    $query->where($column, $value);
+                }
+            }
+        })->where('status', 'published')->whereBetween('price', [$min_price, $max_price])->whereBetween('mileage', [$min_mileage, $max_mileage])->whereBetween('year', [$min_year, $max_year])->get();
+
+        return view('front/index', ['listings' => $listings]);
+    }
+    
+    /**
+     * Displays listings by make
+     */
+    public function getMake(Request $request, $make = null)
+    {    
+        $filters = [
+            'make' => $make
+        ];
+
+        $listings = DB::table('listings')->where(function($query) use($filters) {
+            foreach ($filters as $column => $value) {
+                if (!is_null($value)) {
+                    $query->where($column, $value);
+                }
+            }
+        })->where('status', 'published')->get();
+
+        return view('front/index', ['listings' => $listings]);
+    }
+
+    /**
+     * Displays listings by body type.
+     */
+    public function getBodyType(Request $request, $body_type = null)
+    {    
+        $filters = [
+            'body_type' => $body_type,
+        ];
+
+        $listings = DB::table('listings')->where(function($query) use($filters) {
+            foreach ($filters as $column => $value) {
+                if (!is_null($value)) {
+                    $query->where($column, $value);
+                }
+            }
+        })->where('status', 'published')->get();
+
+        return view('front/index', ['listings' => $listings]);
     }
 
     /**

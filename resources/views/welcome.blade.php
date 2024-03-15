@@ -277,17 +277,47 @@
         {{-- trending --}}
         <section class="welcome__trending">
             <div class="container">
+                
                 <input type="text" name="search" class="welcome__search">
                 <div class="welcome__title">
-                    <i class="far fa-clock"></i> Trending Now
+                    Explore by
                 </div>
-                <div class="welcome__tags">
-                    @foreach ($models as $tag)
-                        <a href="{{ url("listings/{$tag}") }}" class="welcome__tag">
-                            <i class="fas fa-search"></i>
-                            {{ $tag }}
-                        </a>
-                    @endforeach
+                <div class="welcome__query-grid">
+                    <div class="welcome__brands">
+                        <div class="welcome__brands-title">
+                            Popular Brands
+                        </div>
+                        <ul>
+                            <li><a href="{{ route('front.getMake', ['make' => 'toyota']) }}">Toyota</a></li>
+                            <li><a href="{{ route('front.getMake', ['make' => 'nissan']) }}">Nissan</a></li>
+                            <li><a href="{{ route('front.getMake', ['make' => 'honda']) }}">Honda</a></li>
+                            <li><a href="#">Mitsubishi</a></li>
+                            <li><a href="#">Izuzu</a></li>
+                            <li><a href="{{ route('front.getMake', ['make' => 'subaru']) }}">Subaru</a></li>
+                            <li><a href="">Suzuki</a></li>
+                            <li><a href="{{ route('front.getMake', ['make' => 'mazda']) }}">Mazda</a></li>
+                            <li><a href="">Daihatsu</a></li>
+                            <li><a href="">BMW</a></li>
+                            <li><a href="">Volkswagen</a></li>
+                            <li><a href="">Mercedes</a></li>
+                        </ul>
+                    </div>
+                    <div class="welcome__body-types">
+                        <div class="welcome__brands-title">
+                            Body Types
+                        </div>
+                        <ul>
+                            <li><a href="{{ route('front.getBodyType', ['body_type' => 'sedan']) }}">Sedan</a></li>
+                            <li><a href="">Hatchback</a></li>
+                            <li><a href="">SUV</a></li>
+                            <li><a href="">Mini</a></li>
+                            <li><a href="">Convertible</a></li>
+                            <li><a href="{{ route('front.getBodyType', ['body_type' => 'coupe']) }}">Coupe</a></li>
+                            <li><a href="">Minivan</a></li>
+                            <li><a href="">Bus</a></li>
+                            <li><a href="">Truck</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>

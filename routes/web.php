@@ -49,13 +49,18 @@ Route::group(['namespace' => 'App\Http\Controllers\Front'], function() {
     Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
     // index page
-    Route::get('/listings', [ListingController::class, 'index'])->name('front.index');
+    Route::get('/for-sale/{body_type?}/{make?}/{model?}/{state?}/{city?}', [ListingController::class, 'index'])->name('front.index');
+
+    // 
+    Route::get('/for-sale-make/{make?}', [ListingController::class, 'getMake'])->name('front.getMake');
+
+    // 
+    Route::get('/for-sale-body-type/{body_type?}/for-sale', [ListingController::class, 'getBodyType'])->name('front.getBodyType');
 
     // show page 
     Route::get('/listings/{slug}/{id}', [ListingController::class, 'show'])->name('front.show');
 
     // Route::get('/listings/{model}/{id}', 'listingsController@index');
-    Route::get('/listings/{model}', 'listingsController@index');
 
     // account routes
     Route::get('/accounts/saved', 'listingsController@save');

@@ -8,6 +8,9 @@
         $location = basename($_SERVER["REQUEST_URI"]); 
         $result = str_ireplace("%20"," ", $location);
         
+        function formatComma($price) {
+         return number_format(floatval($price)); 
+        }
         // die(var_dump($cars));
     ?>
     <!-- ============================================================== -->
@@ -104,22 +107,24 @@
                 </div>
             </section>
             <section class="listings__grid">
-                @foreach ($cars as $car)
+                @foreach ($listings as $car)
                     <div class="listings__item">
                         <div class="listings__image">
-                            <div class="listings__price">$21000</div>
+                            <div class="listings__price">${{ formatComma($car->price) }}</div>
                             <div class="listings__save"><i class="fas fa-heart"></i></div>
                         </div>
                         <div class="listings__details">
                             <h5 class="listings__condition">Used</h5>
                             <h5 class="listings__title">
-                                <a href="{{ route("front.show", ["slug" => "1995-mazda-rx-7-virginia-beach-va", "id" => 1]) }}">1995 {{ $car }}</a>
+                                <a href="{{ route("front.show", ["slug" => $car->slug, "id" => $car->id]) }}">{{ $car->title }}</a>
                             </h5>
-                            <h5 class="listings__mileage">23,000 mi</h5>
+                            <h5 class="listings__mileage">{{ formatComma($car->mileage)}} mi</h5>
                             <h5 class="listings__payments">Est. $513/mo</h5>
                             <h5 class="listings__carfax">Get the CarFax Report <i class="ti-arrow-top-right"></i></h5>
-                            <h5 class="listings__seller">Hanania of Orange Park</h5>
-                            <h6 class="listings__city"><i class="fas fa-map-marker-alt"></i> Jacksonville, FL</h6>
+                            <h5 class="listings__seller">
+                                Hanania of Orange Park
+                            </h5>
+                            <h6 class="listings__city"><i class="fas fa-map-marker-alt"></i> {{ $car->city }}, {{ $car->state }}</h6>
                         </div>
                     </div>
                 @endforeach

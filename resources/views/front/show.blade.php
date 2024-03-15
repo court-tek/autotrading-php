@@ -21,7 +21,7 @@
             <ol class="breadcrumb__grid">
                 <li class="breadcrumb__item"><a href="/">Home</a></li>
                 <span class="breadcrumb__divider" style="">/</span>
-                <li class="breadcrumb__item"><a href="/listings/Skyline%20R34/">Shop cars similar to this {{ $listing->title }}</a></li>
+                <li class="breadcrumb__item"><a href="{{ route('front.index', ['body_type' => $listing->body_type, 'make' => $listing->make, 'model' => $listing->model, 'state' => $listing->state]) }}">Shop cars similar to this {{ $listing->title }}</a></li>
                 <span class="breadcrumb__divider" style="">/</span>
                 <li class="breadcrumb__item breadcrumb--active" aria-current="page">{{ $listing->title }}</li>
             </ol>

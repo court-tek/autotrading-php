@@ -4,6 +4,12 @@ namespace App\Helper;
 
 class Helper {
 
+    /**
+     * Format salary
+     * 
+     * @param string $salary
+     * @return string Formatted Salary
+     */
     public static function slugify ($string)
     {   
         $string = utf8_encode($string);
@@ -18,5 +24,15 @@ class Helper {
         }
 
         return $string;
+    }
+
+    /**
+     * Format price
+     * 
+     * @param string $price
+     * @return string Formatted Price
+     */
+    function formatSalary($price) {
+        return '$' . number_format(floatval($price)); 
     }
 }
