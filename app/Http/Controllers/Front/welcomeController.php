@@ -43,6 +43,9 @@ class WelcomeController extends Controller
                 "prelude",
                 "integra",
             ],
+            "mazda" => [
+                
+            ],
             "subaru" => [
                 "wrx",
                 "wrx sti",

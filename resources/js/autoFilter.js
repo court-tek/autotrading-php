@@ -24,11 +24,16 @@ export function autoFilter() {
             case "honda":
                 optionArray = ['|', 'civic|Civic', 'civictyper|Civic Type R', 'integra|Intrgra', 'nsx|NSX', 'crx|CRX', 'prelude|Prelude', 's2000|S2000']
                 break;
-        
+            case "mazda":
+                optionArray = ['|', 'rx7|RX-7', 'rx8|RX-8', 'mazda3|Mazda 3', 'mx5|MX-5']
+                break;
+            case "subaru":
+                optionArray = ['|', 'impreza|Impreza WRX', 'wrx|wrx', 'wrxsti|WRX STI', 'brz|BRZ', 'stella|Stella', 'legacy|Legacy']
+                break;
             default:
                 break;
         }
-        
+
         for (let option in optionArray) {
             let pair = optionArray[option].split('|');
             let newOption = document.createElement('option');

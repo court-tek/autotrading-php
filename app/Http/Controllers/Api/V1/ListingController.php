@@ -90,6 +90,13 @@ class ListingController extends Controller
                 "prelude",
                 "integra",
             ],
+            "mazda" => [
+                "s 2000",
+                "nsx",
+                "civic si",
+                "prelude",
+                "integra",
+            ],
             "subaru" => [
                 "wrx",
                 "wrx sti",
