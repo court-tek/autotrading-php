@@ -277,52 +277,85 @@
         {{-- trending --}}
         <section class="welcome__trending">
             <div class="container"> 
-                <section class="welcome__filter">
-                    <div class="form-group listings__make">
-                        <label for="">Make</label>
-                        <select name="make" class="listings__make">
-                            <option value="">All</option>
-                            @foreach ($cars as $make => $value)
-                                <option value="{{ $make }}">{{ $make }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group listings__model">
-                        <label for="">Model</label>
-                        <select id="model" name="model" class="listings__model">
-
-                        </select>
-                    </div>
-                    <div class="form-group listings__price">
-                        <label for="min_price">Min Price</label>
-                        <select name="min_price" class="listings__min-price">
-                            <option value="2000">All</option>
-                            <option value="2000">2000</option>
-                            <option value="4000">4000</option>
-                            <option value="6000">6000</option>
-                        </select>
-                    </div>
-                    <div class="form-group listings__price">
-                        <label for="max_price">Max Price</label>
-                        <select name="max_price" class="listings__max-price">
-                            <option value="2000">All</option>
-                            <option value="2000">2000</option>
-                            <option value="4000">4000</option>
-                            <option value="6000">6000</option>
-                        </select>
-                    </div>
-                    <div class="form-group listings__year">
-                        <label for="">Year</label>
-                        <select name="make" class="listings__year">
-                            <option value="wrx">All</option>
-                            <option value="wrx">1995</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="" style="color: white;">button</label>
-                        <button class="listings__update">update</button>
-                    </div>
-                </section>
+                <form action="{{ route('front.index') }}" method="GET">
+                    <section class="welcome__filter">
+                        <div class="form-group listings__make">
+                            <label for="">Make</label>
+                            <select name="make" class="listings__make">
+                                <option value="">All</option>
+                                @foreach ($cars as $make => $value)
+                                    <option value="{{ $make }}">{{ $make }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group listings__model">
+                            <label for="">Model</label>
+                            <select id="model" name="model" class="listings__model">
+                                <option value="">All</option>
+                            </select>
+                        </div>
+                        <div class="form-group listings__price">
+                            <label for="min_price">Min Price</label>
+                            <select name="min_price" class="listings__min-price">
+                                <option value="0">All</option>
+                                <option value="0">0</option>
+                                <option value="2000">2000</option>
+                                <option value="4000">4000</option>
+                                <option value="6000">6000</option>
+                                <option value="150000">150000</option>
+                                <option value="150000">200000</option>
+                            </select>
+                        </div>
+                        <div class="form-group listings__price">
+                            <label for="max_price">Max Price</label>
+                            <select name="max_price" class="listings__max-price">
+                                <option value="1000000">All</option>
+                                <option value="2000">2000</option>
+                                <option value="4000">4000</option>
+                                <option value="6000">6000</option>
+                                <option value="60000">60000</option>
+                                <option value="70000">70000</option>
+                                <option value="150000">150000</option>
+                                <option value="200000">200000</option>
+                            </select>
+                        </div>
+                        <div class="form-group listings__year">
+                            <label for="">Min Year</label>
+                            <select name="min_year" class="listings__year">
+                                <option value="1975">All</option>
+                                <option value="1995">1995</option>
+                                <option value="2010">2010</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2020">2010</option>
+                                <option value="2022">2020</option>
+                                <option value="2023">2020</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                        <div class="form-group listings__year">
+                            <label for="">Max Year</label>
+                            <select name="max_year" class="listings__year">
+                                <option value="2025">All</option> <option value="2010">2010</option>
+                                <option value="2000">2000</option>
+                                <option value="2010">2010</option>
+                                <option value="2016">2016</option>
+                                <option value="2017">2017</option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="" style="color: white;">button</label>
+                            <button class="listings__update">update</button>
+                        </div>
+                    </section>
+                </form>
                 <div class="welcome__title">
                     Explore by
                 </div>

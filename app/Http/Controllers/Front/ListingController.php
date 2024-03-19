@@ -13,22 +13,37 @@ class ListingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request, $body_type = null, $make = null,  $model = null, $state = null, $city = null)
+    public function index(Request $request)
     {
-        // return $request->input('min_price');
+        $make = $request->input('make');
+        $model = $request->input('model');
         $min_price = (is_null($request->input('min_price'))) ? 0 : $request->input('min_price');
         $max_price = (is_null($request->input('max_price'))) ? 1000000 : $request->input('max_price');
         $min_mileage = (is_null($request->input('min_mileage'))) ? 0 : $request->input('min_mileage');
         $max_mileage = (is_null($request->input('max_mileage'))) ? 400000 : $request->input('max_mileage');
-        $min_year = (is_null($request->input('min_year'))) ? 0 : $request->input('min_year');
+        $min_year = (is_null($request->input('min_year'))) ? 1975 : $request->input('min_year');
         $max_year = (is_null($request->input('max_year'))) ? 2024 : $request->input('max_year');
         
+        
+        $listings = DB::table('listings')->where('status', 'published')->where('make', $make)->where('model', $model)->whereBetween('price', [$min_price, $max_price])->whereBetween('mileage', [$min_mileage, $max_mileage])->whereBetween('year', [$min_year, $max_year])->get();
+
+        return view('front/index', [
+            'listings' => $listings,
+        ]);
+    }
+    // Welcomme page queries
+    /**
+     * Displays listings by make
+     */
+    public function welcomeSearch(Request $request, $make = null, $model = null, $min_price, $max_price, $min_year, $max_year)
+    {    
         $filters = [
-            'body_type' => $body_type,
             'make' => $make,
             'model' => $model,
-            'state' => $state,
-            'city' => $city
+            'min_price' => $min_price,
+            'max_price' => $max_price,
+            'min_year' => $min_year,
+            'max_year' => $max_year,
         ];
 
         $listings = DB::table('listings')->where(function($query) use($filters) {
@@ -37,13 +52,11 @@ class ListingController extends Controller
                     $query->where($column, $value);
                 }
             }
-        })->where('status', 'published')->whereBetween('price', [$min_price, $max_price])->whereBetween('mileage', [$min_mileage, $max_mileage])->whereBetween('year', [$min_year, $max_year])->get();
+        })->where('status', 'published')->get();
 
-        return view('front/index', [
-            'listings' => $listings,
-        ]);
+        return view('front/index', ['listings' => $listings]);
     }
-    
+
     /**
      * Displays listings by make
      */
