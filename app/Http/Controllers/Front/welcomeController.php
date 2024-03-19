@@ -15,6 +15,41 @@ class WelcomeController extends Controller
      */
     public function index()
     {
+        $cars = [
+            "nissan" => [
+                "silvia",
+                "180sx",
+                "sunny",
+                "fairlady z",
+                "GTR R33",
+                "GTR R32",
+                "skyline",
+            ],
+            "toyota" => [
+                "supra",
+                "aristo",
+                "chaser",
+                "altezza",
+                "carolla 86"
+            ],
+            "mitsubishi" => [
+                "3000 gt",
+                "evolution",
+            ],
+            "honda" => [
+                "s 2000",
+                "nsx",
+                "civic si",
+                "prelude",
+                "integra",
+            ],
+            "subaru" => [
+                "wrx",
+                "wrx sti",
+                "forester",
+                "impreza",
+            ],
+        ];
         $models = ['Nissan Silvia', 'Skyline R34', 'Mazda 3', 'Mazda RX7', 'Toyota Chaser', 'Subaru WRX', 'Subaru WRX STI', 'Ford Mustang', 'Ford Bronco'];
         $featured = Listing::all()->where('featured', 1);
         // $featured->id;
@@ -24,7 +59,8 @@ class WelcomeController extends Controller
         return view("welcome", [
             "models" => $models,
             "featured" => $featured,
-            'photos' => $photos
+            'photos' => $photos,
+            'cars' => $cars
         ]);
     }
 

@@ -39,7 +39,9 @@ class ListingController extends Controller
             }
         })->where('status', 'published')->whereBetween('price', [$min_price, $max_price])->whereBetween('mileage', [$min_mileage, $max_mileage])->whereBetween('year', [$min_year, $max_year])->get();
 
-        return view('front/index', ['listings' => $listings]);
+        return view('front/index', [
+            'listings' => $listings,
+        ]);
     }
     
     /**

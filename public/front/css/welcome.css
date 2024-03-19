@@ -64,6 +64,19 @@
         max-width: 800px;
         margin: 0 auto;
     }
+    
+    .welcome__filter {
+        display: grid;
+        gap: 0.3rem;
+        grid-template-columns: repeat(6, 1fr);    
+        padding: 30px 0;
+    }
+
+    .welcome__filter .form-group {
+        display: grid;
+        gap: 0.4rem;
+        grid-template-columns: repeat(1, 1fr);
+    }
 
     .welcome__trending .welcome__title {
         font-size: var(--font-size-600);
@@ -71,6 +84,55 @@
         text-align: center;
         padding: 20px;
         text-transform: uppercase;
+    }
+
+    .welcome__query-grid {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 150px;
+    }
+
+    .welcome__makes {
+        --padding-value: 30px;
+        border: 1px solid var(--negro);
+        padding: 10px var(--padding-value) var(--padding-value) var(--padding-value);
+        border-radius: 5px;
+    }
+
+    .welcome__makes .welcome__title {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    .welcome__makes .welcome__makes-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .welcome__makes-grid li {
+        text-align: center;
+    }
+
+    .welcome__body-types .welcome__title {
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
+    .welcome__body-types .welcome__body-types-grid {
+        display: grid;
+        gap: 1.2rem;
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+
+    .welcome__body-types-grid li {
+        text-align: center;
     }
 
     .welcome__tags {

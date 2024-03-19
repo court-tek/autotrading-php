@@ -58,6 +58,50 @@ class ListingController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     */
+    public function autoOptions(string $make)
+    {
+        $cars = [
+            "nissan" => [
+                "silvia",
+                "180sx",
+                "sunny",
+                "fairlady z",
+                "GTR R33",
+                "GTR R32",
+                "skyline",
+            ],
+            "toyota" => [
+                "supra",
+                "aristo",
+                "chaser",
+                "altezza",
+                "carolla 86"
+            ],
+            "mitsubishi" => [
+                "3000 gt",
+                "evolution",
+            ],
+            "honda" => [
+                "s 2000",
+                "nsx",
+                "civic si",
+                "prelude",
+                "integra",
+            ],
+            "subaru" => [
+                "wrx",
+                "wrx sti",
+                "forester",
+                "impreza",
+            ],
+        ];
+        
+        return $cars[$make];
+    }
+
+    /**
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)

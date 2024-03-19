@@ -276,18 +276,62 @@
         
         {{-- trending --}}
         <section class="welcome__trending">
-            <div class="container">
-                
-                <input type="text" name="search" class="welcome__search">
+            <div class="container"> 
+                <section class="welcome__filter">
+                    <div class="form-group listings__make">
+                        <label for="">Make</label>
+                        <select name="make" class="listings__make">
+                            <option value="">All</option>
+                            @foreach ($cars as $make => $value)
+                                <option value="{{ $make }}">{{ $make }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group listings__model">
+                        <label for="">Model</label>
+                        <select id="model" name="model" class="listings__model">
+
+                        </select>
+                    </div>
+                    <div class="form-group listings__price">
+                        <label for="min_price">Min Price</label>
+                        <select name="min_price" class="listings__min-price">
+                            <option value="2000">All</option>
+                            <option value="2000">2000</option>
+                            <option value="4000">4000</option>
+                            <option value="6000">6000</option>
+                        </select>
+                    </div>
+                    <div class="form-group listings__price">
+                        <label for="max_price">Max Price</label>
+                        <select name="max_price" class="listings__max-price">
+                            <option value="2000">All</option>
+                            <option value="2000">2000</option>
+                            <option value="4000">4000</option>
+                            <option value="6000">6000</option>
+                        </select>
+                    </div>
+                    <div class="form-group listings__year">
+                        <label for="">Year</label>
+                        <select name="make" class="listings__year">
+                            <option value="wrx">All</option>
+                            <option value="wrx">1995</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="" style="color: white;">button</label>
+                        <button class="listings__update">update</button>
+                    </div>
+                </section>
                 <div class="welcome__title">
                     Explore by
                 </div>
                 <div class="welcome__query-grid">
-                    <div class="welcome__brands">
-                        <div class="welcome__brands-title">
+                    <div class="welcome__makes">
+                        <div class="welcome__title">
                             Popular Brands
                         </div>
-                        <ul>
+                        <ul class="welcome__makes-grid">
                             <li><a href="{{ route('front.getMake', ['make' => 'toyota']) }}">Toyota</a></li>
                             <li><a href="{{ route('front.getMake', ['make' => 'nissan']) }}">Nissan</a></li>
                             <li><a href="{{ route('front.getMake', ['make' => 'honda']) }}">Honda</a></li>
@@ -303,10 +347,10 @@
                         </ul>
                     </div>
                     <div class="welcome__body-types">
-                        <div class="welcome__brands-title">
+                        <div class="welcome__title">
                             Body Types
                         </div>
-                        <ul>
+                        <ul class="welcome__body-types-grid">
                             <li><a href="{{ route('front.getBodyType', ['body_type' => 'sedan']) }}">Sedan</a></li>
                             <li><a href="">Hatchback</a></li>
                             <li><a href="">SUV</a></li>
