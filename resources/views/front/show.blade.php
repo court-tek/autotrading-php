@@ -5,13 +5,6 @@
 @section('content')
     <?php 
         $location = basename($_SERVER["REQUEST_URI"]); 
-        // $result = str_ireplace("%20"," ", $location);
-        // // foreach ($car["thumbnails"] as $thumbnail) {
-        // //     echo "$thumbnail";
-        // // }
-        // $image_1 = $car["thumbnails"][6];
-    
-        // die(var_dump($image_1));
     ?>
     <!-- ============================================================== -->
     <!-- pageheader  -->
@@ -56,7 +49,7 @@
                 <div class="listing__details-column">
                     <div class="listing__condition">{{ $listing->condition }}</div>
                     <h3 class="listing__title">{{ $listing->title }}</h3>
-                    <h4 class="listing__price">${{ $listing->price }}</h4>
+                    <h4 class="listing__price">${{ Helper::formatNumber($listing->price) }}</h4>
                     <h4 class="listing__status"><i class="fas fa-fire"></i> Hot Car – this car is popular and expected to sell soon.</h4>
                     <div class="listing__save-item listing__save--active"><i class="fas fa-heart"></i> <span class="listing__saved-status"></span></div>
                     <div class="listing__more-details">
@@ -66,7 +59,7 @@
                         </div>
                         <div class="listing__info">
                             <label for="mileage">Mileage</label>
-                            <h5 name="mileage">{{ $listing->mileage }} mi</h5>
+                            <h5 name="mileage">{{ Helper::formatNumber($listing->mileage) }} mi</h5>
                         </div>
                         <div class="listing__info">
                             <label for="transmission">Transmission</label>

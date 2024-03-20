@@ -245,7 +245,6 @@
                         <div class="hero__info">
                             <div class="hero__subtitle">
                                 {{ $item->condition }}
-                                {{ $item->id}}
                             </div>
                             <div class="hero__title">
                                {{ $item->title }}

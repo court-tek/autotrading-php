@@ -32,7 +32,7 @@ class Helper {
      * @param string $price
      * @return string Formatted Price
      */
-    function formatSalary($price) {
-        return '$' . number_format(floatval($price)); 
+    public static function formatNumber($price) {
+        return number_format(floatval($price)); 
     }
 }

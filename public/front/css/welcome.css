@@ -118,6 +118,12 @@
         text-align: center;
     }
 
+    .welcome__makes-grid li a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: var(--themecolor4);
+    }
+
     .welcome__body-types {
         --padding-value: 30px;
         border: 1px solid var(--negro);
@@ -134,13 +140,24 @@
 
     .welcome__body-types .welcome__body-types-grid {
         display: grid;
-        gap: 1.2rem;
+        gap: 2rem;
         grid-template-columns: repeat(3, 1fr);
         
     }
 
     .welcome__body-types-grid li {
         text-align: center;
+    }
+
+    .welcome__body-types-grid li:hover {
+        /* border: 1px solid var(--themecolor1);
+        border-radius: 4px; */
+    }
+
+    .welcome__body-types-grid li a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: var(--themecolor4);
     }
 
     .welcome__tags {

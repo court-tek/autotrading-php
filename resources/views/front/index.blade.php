@@ -7,11 +7,6 @@
     <?php 
         $location = basename($_SERVER["REQUEST_URI"]); 
         $result = str_ireplace("%20"," ", $location);
-        
-        function formatComma($price) {
-         return number_format(floatval($price)); 
-        }
-        // die(var_dump($cars));
     ?>
     <!-- ============================================================== -->
     <!-- pageheader  -->
@@ -110,7 +105,7 @@
                 @foreach ($listings as $car)
                     <div class="listings__item">
                         <div class="listings__image">
-                            <div class="listings__price">${{ formatComma($car->price) }}</div>
+                            <div class="listings__price">${{ Helper::formatNumber($car->price) }}</div>
                             <div class="listings__save"><i class="fas fa-heart"></i></div>
                         </div>
                         <div class="listings__details">
@@ -118,7 +113,7 @@
                             <h5 class="listings__title">
                                 <a href="{{ route("front.show", ["slug" => $car->slug, "id" => $car->id]) }}">{{ $car->title }}</a>
                             </h5>
-                            <h5 class="listings__mileage">{{ formatComma($car->mileage)}} mi</h5>
+                            <h5 class="listings__mileage">{{ Helper::formatNumber($car->mileage)}} mi</h5>
                             <h5 class="listings__payments">Est. $513/mo</h5>
                             <h5 class="listings__carfax">Get the CarFax Report <i class="ti-arrow-top-right"></i></h5>
                             <h5 class="listings__seller">
