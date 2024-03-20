@@ -52,9 +52,6 @@ Route::group(['namespace' => 'App\Http\Controllers\Front'], function() {
     Route::get('/for-sale', [ListingController::class, 'index'])->name('front.index');
 
     // 
-    // Route::get('/for-sale-make/{make?}/{model?}/{min_price?}/', [ListingController::class, 'getMake'])->name('front.getMake');
-
-    // 
     Route::get('/for-sale-make/{make?}', [ListingController::class, 'getMake'])->name('front.getMake');
 
     // 

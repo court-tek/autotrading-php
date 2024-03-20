@@ -25,7 +25,7 @@
                 {{-- logo area --}}
                 <div class="navigation__logo">
                     <a href="" class="navigation__header-link">
-                        Auto Exchange
+                        JDM Auto Exchange
                     </a>
                 </div>
 
@@ -34,7 +34,7 @@
                     {{-- logo area --}}
                     <div class="navigation__left-menu-logo">
                         <a href="" class="navigation__header-link">
-                            Auto Exchange
+                            Jdm Auto Exchange
                         </a>
                     </div>
 
@@ -259,16 +259,16 @@
             
             <div class="hero__indicator">
                 <div class="hero__indicator-item">
-                    <span class="hero__indicator-number">01</span>
-                    <span class="hero__indicator-text">Sports Sedan</span>
+                    <span class="hero__indicator-number">100%</span>
+                    <span class="hero__indicator-text">Cash Back</span>
                 </div>
                 <div class="hero__indicator-item">
-                    <span class="hero__indicator-number">02</span>
-                    <span class="hero__indicator-text">Sports Coupe</span>
+                    <span class="hero__indicator-number">50+</span>
+                    <span class="hero__indicator-text">Countries</span>
                 </div>
                 <div class="hero__indicator-item">
-                    <span class="hero__indicator-number">03</span>
-                    <span class="hero__indicator-text">Sports Coupe</span>
+                    <span class="hero__indicator-number">97%</span>
+                    <span class="hero__indicator-text">Customer Satisfaction</span>
                 </div>
             </div>
         </section> 

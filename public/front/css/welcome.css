@@ -140,7 +140,7 @@
 
     .welcome__body-types .welcome__body-types-grid {
         display: grid;
-        gap: 2rem;
+        gap: 1.2rem;
         grid-template-columns: repeat(3, 1fr);
         
     }
@@ -150,8 +150,8 @@
     }
 
     .welcome__body-types-grid li:hover {
-        /* border: 1px solid var(--themecolor1);
-        border-radius: 4px; */
+        border: 1px solid var(--themecolor1);
+        border-radius: 4px;
     }
 
     .welcome__body-types-grid li a {
