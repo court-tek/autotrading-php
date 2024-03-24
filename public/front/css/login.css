@@ -1,7 +1,5 @@
 /* This applies from 0px to 768 */
-.auth {
-        
-}
+/* .auth {} */
 
 .aligner {
     min-height: 100vh;
@@ -100,7 +98,6 @@
 .auth__footer-item:hover a {
     color: var(--rojo);
 } 
-}
 /* This applies from 768px onwards */
 @media (min-width: 768px) {}
 

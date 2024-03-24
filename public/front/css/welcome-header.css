@@ -1,7 +1,7 @@
 /* This applies from 0px to 768 */
 .navigation {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-between;
     padding: 20px 0;
     z-index: 2;
 }
@@ -192,20 +192,19 @@
     .navigation {
         position: relative;
     }
+
     .navigation__logo {
         display: none;
     }
 
     .navigation__left-menu {
         display: flex;
-        justify-content: space-between;
     }
 
     .navigation__left-menu .navigation__left-menu-logo {
         display: flex;
         font-size: var(--font-size-400);
         padding: 15px 0px;
-        /* background-color: var(--rojo); */
         margin-right: 24px;
     }
 
