@@ -1,5 +1,5 @@
 <!-- resources/views/child.blade.php -->
-@extends('layouts.front.app')
+@extends('layouts.app')
  
 @section('title', 'Realestate App')
  
@@ -9,6 +9,9 @@
     <!-- ============================================================== -->
     <div class="auth">
         <div class="aligner">
+            <div class="aligner__title">
+                <a href="{{ route('register') }}" class="aligner__home-link">jdm autotrader</a>
+            </div>
             <div class="auth__form">
                 <h3>Register</h3>   
                 <form method="POST" action="{{ route('login') }}">

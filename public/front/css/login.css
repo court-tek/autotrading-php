@@ -1,5 +1,106 @@
 /* This applies from 0px to 768 */
+.auth {
+        
+}
 
+.aligner {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.aligner__title {
+    margin-bottom: 50px;
+}
+
+.aligner__header {
+    display: flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.aligner__title .aligner__home-link {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none; 
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.auth__form {
+    /* background: var(--themecolor1); */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 20px;
+    width: 350px;
+}
+
+.auth__form h3 {
+    text-align: center;
+    font-size: var(--font-size-800);
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.auth__form form {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+.auth__form form .form-group {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.form-group input[type=email], input[type=text] ,input[type=password], input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid var(--themecolor9);
+    border-radius: 4px;
+}
+
+.auth__form input[type=submit] {
+    border: 1px solid var(--themecolor1);
+    color: var(--themecolor1);
+    background-color: var(--blanco);
+    border-radius: 4px;
+    padding: 12px 20px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.auth__form input[type=submit]:hover {
+    background-color: var(--themecolor1);
+    color: var(--blanco);
+}
+
+.auth__footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid var(--negro);
+}
+
+.auth__footer-left, .auth__footer-right {
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.auth__footer-left a, .auth__footer-right a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--negro);
+} 
+
+.auth__footer-item:hover a {
+    color: var(--rojo);
+} 
+}
 /* This applies from 768px onwards */
 @media (min-width: 768px) {}
 
