@@ -14,8 +14,27 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-direction: column;
+    }
+
+    .aligner__title {
+        margin-bottom: 50px;
+    }
+
+    .aligner__header {
+        display: flex;
+        flex-direction:row;
+        justify-content: space-between;
     }
     
+    .aligner__title .aligner__home-link {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none; 
+        text-transform: uppercase;
+        text-align: center;
+    }
+
     .auth__form {
         /* background: var(--themecolor1); */
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

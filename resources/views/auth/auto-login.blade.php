@@ -1,5 +1,5 @@
 <!-- resources/views/child.blade.php -->
-@extends('layouts.front.app')
+@extends('layouts.app')
  
 @section('title', 'Realestate App')
  
@@ -9,6 +9,9 @@
     <!-- ============================================================== -->
     <div class="auth">
         <div class="aligner">
+            <div class="aligner__title">
+                <a href="{{ route('register') }}" class="aligner__home-link">jdm autotrader</a>
+            </div>
             <div class="auth__form">
                 <h3>Sign In</h3>   
                 <form method="POST" action="{{ route('login') }}">
@@ -33,13 +36,13 @@
                 </form>
 
                 <div class="auth__footer">
-                    <div class="auth__footer-left auth__footer-item">
-                        <a href="{{ route('register') }}" class="auth__register-link">Create An Account</a>
-                    </div>
                     <div class="auth__footer-right auth__footer-item">
                         @if (Route::has('password.request'))
                             <a href="{{ route('password.request') }}" class="auth__forgot-password">Forgot Password?</a>
                         @endif
+                    </div>
+                    <div class="auth__footer-left auth__footer-item">
+                        <a href="{{ route('register') }}" class="algner__register-link">Create An Account</a>
                     </div>
                 </div>
             </div>

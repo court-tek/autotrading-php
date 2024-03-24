@@ -58,7 +58,7 @@
                             </span>
                             {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
                             @else
-                                <a href="{{ route('login') }}" class="navigation__login-link">Log in</a>
+                                <a href="{{ route('login') }}" class="navigation__login-link">Sign in</a>
 
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="navigation__register-link">Register</a>
@@ -217,7 +217,7 @@
                 </div>
                 <div class="mobile-menu__contentBx">
                     <div class="mobile-menu__label">
-                        <h5>Agent Findeer</h5>
+                        <h5>Auto Finder</h5>
                         <i class="fas fa-angle-down"></i>
                     </div>
                     <div class="mobile-menu__links content">
@@ -253,24 +253,25 @@
                                 <a href="{{ route('front.show', ['slug' => $item->slug, 'id' => $item->id]) }}">See Listing</a>
                             </div>
                         </div> 
+                        <div class="hero__indicator">
+                            <div class="hero__indicator-item">
+                                <span class="hero__indicator-number">01</span>
+                                <span class="hero__indicator-text">{{ $item->title }}</span>
+                            </div>
+                            <div class="hero__indicator-item">
+                                <span class="hero__indicator-number">02</span>
+                                <span class="hero__indicator-text">Hp: {{ $item->horsepower }}</span>
+                            </div>
+                            <div class="hero__indicator-item">
+                                <span class="hero__indicator-number">03</span>
+                                <span class="hero__indicator-text">{{ $item->transmission }}</span>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>
             
-            <div class="hero__indicator">
-                <div class="hero__indicator-item">
-                    <span class="hero__indicator-number">100%</span>
-                    <span class="hero__indicator-text">Cash Back</span>
-                </div>
-                <div class="hero__indicator-item">
-                    <span class="hero__indicator-number">50+</span>
-                    <span class="hero__indicator-text">Countries</span>
-                </div>
-                <div class="hero__indicator-item">
-                    <span class="hero__indicator-number">97%</span>
-                    <span class="hero__indicator-text">Customer Satisfaction</span>
-                </div>
-            </div>
+            
         </section> 
         
         {{-- trending --}}
@@ -293,7 +294,7 @@
                                 <option value="">All</option>
                             </select>
                         </div>
-                        <div class="form-group listings__price">
+                        <div class="form-group listings__price non-mobile">
                             <label for="min_price">Min Price</label>
                             <select name="min_price" class="listings__min-price">
                                 <option value="0">All</option>
@@ -305,7 +306,7 @@
                                 <option value="150000">200000</option>
                             </select>
                         </div>
-                        <div class="form-group listings__price">
+                        <div class="form-group listings__price non-mobile">
                             <label for="max_price">Max Price</label>
                             <select name="max_price" class="listings__max-price">
                                 <option value="1000000">All</option>
@@ -349,8 +350,8 @@
                                 <option value="2025">2025</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="" style="color: white;">button</label>
+                        <div class="form-group form-group--full-width">
+                            <label for="" style="color: white;" class="non-mobile">button</label>
                             <button class="listings__update">update</button>
                         </div>
                     </section>

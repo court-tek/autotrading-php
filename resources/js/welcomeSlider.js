@@ -6,6 +6,7 @@ export function welcomeSlider() {
         // *************************************************
         let container = document.getElementsByClassName('hero__images')[0],
         slides = document.getElementsByClassName('hero__image'),
+		indicator = document.getElementsByClassName('hero__indicator-text'),
         current = 1,
         time = 5000;
 

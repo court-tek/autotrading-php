@@ -15,11 +15,8 @@
 
 .hero__images .hero__image {
     position: relative;
-    /* display: none; */
     flex-shrink: 0;
     width: 100%;
-    /* object-fit: cover; */
-    /* object-position: center; */
 }
 
 .hero__slider--active{
@@ -31,19 +28,22 @@
     top: 20%;
     left: 10%;
     /* color: var(--blanco); */
-    font-size: 4rem;
+    font-size: 1rem;
     background-color: var(--transparent-dark2);
-    padding: 20px;
+    text-align: center;
+    padding: 10px;
 }
 
 .hero__info .hero__subtitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    text-align: center;
     color: var(--blanco);
     margin-bottom: 20px;
 }
 
 .hero__info .hero__title {
-    font-size: 3rem;
+    font-size: 1.1rem;
+    text-align: center;
     font-weight: 700;
     width: 310px;
     color: var(--blanco);
@@ -51,7 +51,7 @@
 }
 
 .hero__info .hero__info-link {
-    font-size: 1.3rem;   
+    font-size: 0.9rem;   
 }
 
 .hero__info-link a {
@@ -66,11 +66,12 @@
     color: var(--themecolor1);
 }
 
-.hero .hero__indicator {
+.hero__image .hero__indicator {
     position: absolute;
-    background-color: var(--blanco);
+    background-color: var(--transparent-dark2);
     bottom: 0;
-    right: 50px;
+    left: 0;
+    right: 0;
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(3, 1fr);
@@ -115,17 +116,21 @@
     .hero__image .hero__info {
         position: absolute;
         top: 20%;
-        left: 10%;
+        right: 10%;
+        width: 300px;
         /* color: var(--blanco); */
         font-size: 4rem;
         background-color: var(--transparent-dark2);
         padding: 20px;
+        text-align: left;
+        width: 30%;
     }
     
     .hero__info .hero__subtitle {
         font-size: 1.2rem;
         color: var(--blanco);
         margin-bottom: 20px;
+        text-align: left;
     }
 
     .hero__info .hero__title {
@@ -134,6 +139,7 @@
         width: 310px;
         color: var(--blanco);
         margin-bottom: 20px;
+        text-align: left;
     }
 
     .hero__info .hero__info-link {
@@ -145,18 +151,18 @@
         text-decoration: none;
         font-weight: 600;
         transition: all .3s ease-in-out;
-        
     }
 
     .hero__info-link a:hover {
         color: var(--themecolor1);
     }
 
-    .hero .hero__indicator {
+    .hero__image .hero__indicator {
         position: absolute;
         background-color: var(--blanco);
         bottom: 0;
-        right: 50px;
+        left: 50%;
+        right: 0;
         display: grid;
         gap: 1rem;
         grid-template-columns: repeat(3, 1fr);

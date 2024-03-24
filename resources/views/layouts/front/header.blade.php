@@ -34,7 +34,19 @@
             {{-- mobile open btn --}}
             <div class="navigation__burger-menu">
                 <span class="navigation__user-greeting">
-                    Hi, Courtney
+                    @if (Route::has('login'))
+                        @auth
+                            <span class="navigation__user-greeting">
+                                Hi, {{ auth()->user()->name }}
+                            </span>
+                            {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
+                            @else
+                                <div class="navigation__auth">
+                                    <i class="ti-user"></i>
+                                    <a href="{{ route('login') }}" class="navigation__signin-link">Sign In</a>
+                                </div>
+                        @endauth
+                    @endif
                 </span>
                 <i class="fas fa-bars"></i>
             </div>
