@@ -109,7 +109,7 @@
                                     <i class="ti-car"></i> 
                                     <span class="account-link">Your Garage</span>
                                 </a>
-                                <a href="{{ url('/profile') }}">
+                                <a href="{{ route('profile.user') }}">
                                     <i class="ti-user"></i> 
                                     <span class="account-link">Account Info</span>
                                 </a>

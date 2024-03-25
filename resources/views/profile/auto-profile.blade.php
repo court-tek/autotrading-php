@@ -33,10 +33,10 @@
     <div class="profile">
         <div class="container">
             <div class="profile__info">
-                <p>Name: <span>{{ auth()->user()->name }}</span></p>
-                <p>Email: <span>{{ auth()->user()->email }}</span> <span>verified</span></p>
-                <button class="listings__update">edit your info</button>
-                <form method="post" action="{{ route('profile.destroy') }}" class="p-6">
+                <p class="profile__tag">Name: <span class="profile__user-detail">{{ auth()->user()->name }}</span></p>
+                <p class="profile__tag">Email: <span class="profile__user-detail">{{ auth()->user()->email }}</span> <button class="profile__verified">verified</button></p>
+                <button class="listings__update profile__edit">edit your info</button>
+                <form method="post" action="{{ route('profile.destroy') }}" class="">
                     @csrf
                     @method('delete')
                     

@@ -8,6 +8,38 @@
     .profile__info {
         margin: 50px 0 0 0;
     }
+
+    .profile__tag {
+        margin: 10px 0;
+        font-weight: 700;
+    }
+
+    .profile__user-detail {
+        font-weight: 400;
+    }
+
+    .profile__verified {
+        padding: 3px;
+        background-color: var(--themecolor9);
+        color: var(--themecolor4);
+        border: none;
+        font-weight: 300;
+    }
+
+    .profile__edit {
+        margin: 20px 0;
+        cursor: pointer;
+    }
+
+    .profile__destroy {
+        border: none;
+        color: var(--themecolor7);
+        background-color: var(--blanco);
+        font-weight: 600;
+        font-size: 1rem;
+        margin: 20px 0;
+        cursor: pointer;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
