@@ -160,7 +160,9 @@
     color: var(--themecolor4);
 }
 
-
+.welcome__filter .form-group--full-width {
+    grid-column: 0;
+}
 
 /* .form-group button {
     background-color: red;
@@ -203,6 +205,10 @@
         gap: 0.3rem;
         grid-template-columns: repeat(7, 1fr);    
         padding: 30px 0;
+    }
+
+    .welcome__filter .form-group--full-width {
+        grid-column: -2 / -1;
     }
 
     .welcome__filter .form-group {

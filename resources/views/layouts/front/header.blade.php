@@ -87,7 +87,7 @@
                             {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
                             <a href="#home">
                                 <i class="ti-heart"></i> 
-                                <span class="account-link">Saved Cars (6)</span>
+                                <span class="account-link">Saved Cars ()</span>
                             </a>
                             <a href="#home">
                                 <i class="ti-car"></i> 
@@ -95,7 +95,7 @@
                             </a>
                             <a href="#home">
                                 <i class="ti-user"></i> 
-                                <span class="account-link">Account Info</span>
+                                <span class="{{ route('profile.user') }}">Account Info</span>
                             </a>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf

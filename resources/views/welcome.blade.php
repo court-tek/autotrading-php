@@ -351,7 +351,7 @@
                             </select>
                         </div>
                         <div class="form-group form-group--full-width">
-                            <label for="" style="color: white;" class="non-mobile">button</label>
+                            <label for="" style="color: white;" class="">button</label>
                             <button class="listings__update">update</button>
                         </div>
                     </section>

@@ -8,6 +8,7 @@
 @import url('listing-details.css');
 @import url('saved-listings.css');
 @import url('welcome.css');
+@import url('profile.css');
 
 :root {
     --themecolor1: hsl(271, 58%, 29%);

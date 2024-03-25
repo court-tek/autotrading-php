@@ -1,0 +1,14 @@
+/* This applies from 0px to 768 */
+
+/* This applies from 768px onwards */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .profile__info {
+        margin: 50px 0 0 0;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}
