@@ -33,25 +33,23 @@
     <!-- ============================================================== -->
     <div class="profile">
         <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Title</th>
-                    <th>City</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Francisco Chang</td>
-                    <td>Centro comercial Officer</td>
-                    <td>Mexico</td>
-                <tr>
-            </tbody>
-        </table>
+            <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr>
+            <tr>
+              <td>Centro comercial Moctezuma</td>
+              <td>Francisco Chang</td>
+              <td>Mexico</td>
+            </tr>
+          </table>
         <div class="profile__info">
             <p>Name: <span>name</span></p>
             <p>Email: <span>email</span><span>verified</span></p>
         </div>
+
+        .profile__update-pass>
     </div>
     <!-- ============================================================== -->
     <!-- content  -->
