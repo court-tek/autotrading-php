@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PhotoController;
 use App\Http\Controllers\Front\WelcomeController;
 use App\Http\Controllers\Front\ListingController;
+use App\Http\Controllers\Front\ListingLikeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -60,10 +61,10 @@ Route::group(['namespace' => 'App\Http\Controllers\Front'], function() {
     // show page 
     Route::get('/listings/{slug}/{id}', [ListingController::class, 'show'])->name('front.show');
 
-    // Route::get('/listings/{model}/{id}', 'listingsController@index');
-
-    // account routes
-    Route::get('/accounts/saved', 'listingsController@save');
+    // Likes and unlike
+    Route::get('/listings/{listing_id}/like', [ListingLikeController::class, 'like'])->name('listing.like');
+    Route::get('/listings/{listing_id}/unlike', [ListingLikeController::class, 'unlike'])->name('listing.unlike');
+    
 });
 
 Route::middleware('auth')->group(function () {
