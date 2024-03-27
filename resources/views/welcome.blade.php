@@ -101,11 +101,11 @@
                             @auth
                                 <h1>Hi, {{ auth()->user()->name }}</h1>
                                 {{-- <a href="{{ url('/dashboard') }}" class="">Dashboard</a> --}}
-                                <a href="#home">
+                                <a href="{{ route('profile.saved') }}">
                                     <i class="ti-heart"></i> 
                                     <span class="account-link">Saved Cars (6)</span>
                                 </a>
-                                <a href="#home">
+                                <a href="{{ route('profile.your-garage') }}">
                                     <i class="ti-car"></i> 
                                     <span class="account-link">Your Garage</span>
                                 </a>

@@ -18,10 +18,10 @@
             <ol class="breadcrumb__grid">
                 <li class="breadcrumb__item"><a href="/">Home</a></li>
                 <span class="breadcrumb__divider" style="">/</span>
-                <li class="breadcrumb__item breadcrumb--active" aria-current="page">Profile Settings</li>
+                <li class="breadcrumb__item breadcrumb--active" aria-current="page">Saved Cars</li>
             </ol>
 
-            <h2 class="breadcrumb__page-title">Account Info</h2>
+            <h2 class="breadcrumb__page-title">Saved Cars</h2>
         </div>
     </nav>
     <!-- ============================================================== -->
@@ -32,24 +32,12 @@
     <!-- content  -->
     <!-- ============================================================== -->
     <div class="profile">
-        <table>
-            <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr>
-            <tr>
-              <td>Centro comercial Moctezuma</td>
-              <td>Francisco Chang</td>
-              <td>Mexico</td>
-            </tr>
-          </table>
-        <div class="profile__info">
-            <p>Name: <span>name</span></p>
-            <p>Email: <span>email</span><span>verified</span></p>
+        <div class="container">
+            <div class="profile__info">
+                <p>Name: <span>name</span></p>
+                <p>Email: <span>email</span><span>verified</span></p>
+            </div>
         </div>
-
-        .profile__update-pass>
     </div>
     <!-- ============================================================== -->
     <!-- content  -->

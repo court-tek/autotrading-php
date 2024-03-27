@@ -54,10 +54,18 @@ class User extends Authenticatable
     }
 
     /**
-     * Get the comments for the blog post.
+     * Get the listings of a user.
      */
     public function listings(): HasMany
     {
         return $this->hasMany(Listing::class);
+    }
+
+    /**
+     * Get the favorite listings of a auser.
+     */
+    public function likes(): HasMany
+    {
+        return $this->hasMany(Like::class);
     }
 }

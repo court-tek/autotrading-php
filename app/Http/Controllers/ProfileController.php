@@ -46,6 +46,22 @@ class ProfileController extends Controller
     }
 
     /**
+     * Update the user's profile information.
+     */
+    public function garage()
+    {
+        return view("profile/auto-garage");
+    }
+
+    /**
+     * Update the user's profile information.
+     */
+    public function saved()
+    {
+        return view("profile/auto-saved");
+    }
+
+    /**
      * Delete the user's account.
      */
     public function destroy(Request $request): RedirectResponse

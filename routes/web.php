@@ -67,7 +67,9 @@ Route::group(['namespace' => 'App\Http\Controllers\Front'], function() {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/user-profile', [ProfileController::class, 'show'])->name('profile.user');
+    Route::get('/your-profile', [ProfileController::class, 'show'])->name('profile.user');
+    Route::get('/profile/your-garage', [ProfileController::class, 'garage'])->name('profile.your-garage');
+    Route::get('/profile/saved-cars', [ProfileController::class, 'saved'])->name('profile.saved');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

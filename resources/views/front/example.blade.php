@@ -32,25 +32,27 @@
     <!-- content  -->
     <!-- ============================================================== -->
     <div class="profile">
-        <table>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Title</th>
-                    <th>City</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Francisco Chang</td>
-                    <td>Centro comercial Officer</td>
-                    <td>Mexico</td>
-                <tr>
-            </tbody>
-        </table>
-        <div class="profile__info">
-            <p>Name: <span>name</span></p>
-            <p>Email: <span>email</span><span>verified</span></p>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Title</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Francisco Chang</td>
+                        <td>Centro comercial Officer</td>
+                        <td>Mexico</td>
+                    <tr>
+                </tbody>
+            </table>
+            <div class="profile__info">
+                <p>Name: <span>name</span></p>
+                <p>Email: <span>email</span><span>verified</span></p>
+            </div>
         </div>
     </div>
     <!-- ============================================================== -->
